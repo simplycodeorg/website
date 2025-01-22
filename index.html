@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Snippets</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="/bettersimplycode.avif" alt="Simply Code" class="nav-logo">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/opportunities">Opportunities</a></li>
+                    <li><a href="/join">Join Us</a></li>
+                    <li><a href="/donate">Donate</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <h1>Simply Code</h1>
+            <p id="typing-text"></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="mission">
+            <h2>Our Mission</h2>
+            <p>Simply Code is an educational technology organization that offers free project-oriented workshops and so much more! Made for groups often left behind in our rapidly growing tech-savvy world, Simply Code combines tech education and digital citizenship to empower youth in their technology journey.</p>
+        </section>
+
+        <section id="impact">
+            <h2>Our Impact</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>2,500+</h3>
+                    <p>Students Taught</p>
+                </div>
+                <div class="stat-card">
+                    <h3>150+</h3>
+                    <p>Workshops Delivered</p>
+                </div>
+                <div class="stat-card">
+                    <h3>45+</h3>
+                    <p>Partner Schools</p>
+                </div>
+                <div class="stat-card">
+                    <h3>98%</h3>
+                    <p>Student Satisfaction</p>
+                </div>
+                <div class="stat-card">
+                    <h3>25+</h3>
+                    <p>Cities Reached</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="opportunities">
+            <h2>Opportunities</h2>
+            <div class="opportunities-grid">
+                <div class="opp-card">
+                    <h3>Coding Workshops</h3>
+                    <p>Join our hands-on coding workshops where you'll build real projects using Python, JavaScript, and more.</p>
+                    <button class="btn">Join Workshop</button>
+                </div>
+                <div class="opp-card">
+                    <h3>Tech Community</h3>
+                    <p>Connect with like-minded peers, mentors, and industry professionals in our growing tech community.</p>
+                    <button class="btn">Join Community</button>
+                </div>
+                <div class="opp-card">
+                    <h3>Build Projects</h3>
+                    <p>Work on meaningful projects that solve real-world problems while building your portfolio.</p>
+                    <button class="btn">Start Building</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>Who Are We?</h2>
+            <p>We're a passionate team of high school students dedicated to making technology education acessible to everyone. From hosting interactive workshops to creating engaging learning experiences, our mission to make tech simple starts with the belief that anyone can code.</p>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Copyright © 2025 Simply Code</p>
+        </div>
+    </footer>
+
+    <script>
+    const texts = [
+        "Breaking down barriers in tech education.",
+        "Making coding accessible to every student.",
+        "By students, for students.",
+        "Where complex tech becomes simply understood.",
+        "Empowering the next generation of innovators.",
+        "Building a more inclusive tech future.",
+        "Tech education shouldn't be complicated.",
+        "Learning to code, one project at a time.",
+        "Transforming tech education, student by student.",
+        "Where passion meets programming."
+    ];
+
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let isWaiting = false;
+
+    function type() {
+        const currentText = texts[textIndex];
+        const typingText = document.getElementById('typing-text');
+        
+        if (isDeleting) {
+            // Deleting text
+            typingText.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            // Typing text
+            typingText.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        // Speed control
+        let typeSpeed = isDeleting ? 50 : 100;
+
+        // Check if word is complete
+        if (!isDeleting && charIndex === currentText.length) {
+            // Wait at end of word
+            typeSpeed = 2000;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            // Move to next word
+            textIndex = (textIndex + 1) % texts.length;
+            // Wait before starting new word
+            typeSpeed = 500;
+        }
+
+        setTimeout(type, typeSpeed);
+    }
+
+    // Start the typing animation
+    window.onload = function() {
+        setTimeout(type, 1000); // Delay start by 1 second
+    }
+    </script>
+</body>
+</html>
+
