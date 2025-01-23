@@ -46,9 +46,6 @@
     <nav>
         <div class="nav-content">
             <div class="nav-top">
-                <a href="/" class="logo-link">
-                    <img src="bettersimplycode.avif" alt="Simply Code" class="nav-logo">
-                </a>
                 <button class="mobile-menu-btn" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
@@ -58,7 +55,9 @@
             <ul class="nav-links">
                 <li><a href="/" class="active">Home</a></li>
                 <li><a href="/about">About Us</a></li>
-                <li><a href="/opportunities">Opportunities</a></li>
+                <li><a href="/events">Events</a></li>
+
+                <li><a href="/products">Products</a></li>
                 <li><a href="/join">Join Us</a></li>
                 <li><a href="/donate" class="btn-nav">Donate</a></li>
             </ul>
@@ -69,13 +68,13 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Simply Code</h1>
-                <div class="tagline-container">
-                    <div id="typing-text"></div>
-                </div>
+                <!-- <div class="tagline-container">
+                 <div id="typing-text"></div> 
+                </div> -->
                 <p>Building the future of tech education, one student at a time</p>
                 <div class="btn-container">
-                    <button class="btn btn-primary">Join Our Community</button>
-                    <button class="btn btn-secondary">Explore Programs</button>
+                    <a  style ="text-decoration:none;" href="/products" class="btn btn-primary">Our Products</a>
+                    <a style="text-decoration:none;" href="/events" class="btn btn-secondary">Explore Events</a>
                 </div>
             </div>
         </div>
@@ -109,30 +108,15 @@
             <h2>Our Partners</h2>
             <div class="logo-scroll">
                 <div class="logo-container">
-                    <!-- First set of logos -->
-                    <img src="/teamPictures/jeff.avif" alt="Google">
-                    <img src="/teamPictures/jeff.avif" alt="Microsoft">
-                    <img src="/teamPictures/jeff.avif" alt="AWS">
-                    <img src="/teamPictures/jeff.avif" alt="Meta">
-                    <img src="/teamPictures/jeff.avif" alt="IBM">
-                    <!-- Duplicate logos for seamless scroll -->
-                    <img src="/teamPictures/jeff.avif" alt="Google">
-                    <img src="/teamPictures/jeff.avif" alt="Microsoft">
-                    <img src="/teamPictures/jeff.avif" alt="AWS">
-                    <img src="/teamPictures/jeff.avif" alt="Meta">
-                    <img src="/teamPictures/jeff.avif" alt="IBM">
+                    <img src="/partners/civics.jpg" alt="Google">
+                    <img src="/partners/hackclub.png" alt="Microsoft">
                 </div>
             </div>
         </section>
 
-        <section id="mission">
-            <h2 style="font-size: 2.5rem;">Our Mission</h2>
-            <p>Simply Code is an educational technology organization that offers free project-oriented workshops and so much more! Made for groups often left behind in our rapidly growing tech-savvy world, Simply Code combines tech education and digital citizenship to empower youth in their technology journey.</p>
-        </section>
-
 
         <section id="opportunities">
-            <h2>Opportunities</h2>
+            <h2>Events</h2>
             <div class="opportunities-grid">
                 <div class="opp-card">
                     <h3>Workshops</h3>
@@ -140,13 +124,13 @@
                     <button class="btn">Join Workshop</button>
                 </div>
                 <div class="opp-card">
-                    <h3>Project Showcase</h3>
+                    <h3>Conferences</h3>
                     <p>XYZ.</p>
-                    <button class="btn">Join Community</button>
+                    <button class="btn">Start Building</button>
                 </div>
                 <div class="opp-card">
-                    <h3>Placeholder</h3>
-                    <p>XYZ.</p>
+                    <h3>Courses</h3>
+                    <p>Learn.</p>
                     <button class="btn">Start Building</button>
                 </div>
             </div>
@@ -158,22 +142,18 @@
                 <div class="stat-card">
                     <h3>80+</h3>
                     <p>Students Reached</p>
-                    <p>Empowering the next generation of tech innovators through hands-on learning experiences.</p>
                 </div>
                 <div class="stat-card">
                     <h3>2+</h3>
                     <p>Workshops Conducted</p>
-                    <p>Interactive sessions covering everything from basic coding to advanced web development.</p>
                 </div>
                 <div class="stat-card">
                     <h3>5+</h3>
                     <p>Partners</p>
-                    <p>Building strong relationships with educational institutions across the country.</p>
                 </div>
                 <div class="stat-card">
                     <h3>25+</h3>
                     <p>Members</p>
-                    <p>Dedicated team members working together to make coding education accessible and engaging.</p>
                 </div>
             </div>
         </section>
@@ -181,10 +161,6 @@
 
       
 
-        <section id="about">
-            <h2 style="font-size: 2.5rem">Who Are We?</h2>
-            <p style="font-size: 1.125rem;">We're a passionate team of high school students dedicated to making technology education acessible to everyone. From hosting interactive workshops to creating engaging learning experiences, our mission to make tech simple starts with the belief that anyone can code.</p>
-        </section>
     </div>
 
     <footer>
@@ -193,17 +169,17 @@
                 <img src="SC transparent.png" alt="Simply Code" class="footer-logo">
                 <p>Empowering the next generation of tech innovators through accessible education.</p>
                 <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Instagram">
+                    <a href="https://www.linkedin.com/company/simply-code" class="social-link" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/wesimplycode" class="social-link" target="_blank" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="#" class="social-link" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
+                    <a href="https://www.tiktok.com/@wesimplycode" class="social-link" target="_blank" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
                     </a>
-                    <a href="#" class="social-link" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
+                    <a href="https://www.youtube.com/@SimplyCode" class="social-link" target="_blank" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
                     </a>
                 </div>
             </div>
@@ -221,8 +197,7 @@
             <div class="footer-section">
                 <h3>Contact</h3>
                 <ul>
-                    <li><a href="mailto:hello@simplycode.org">hello@simplycode.org</a></li>
-                    <li><a href="tel:+1234567890">123-456-7890</a></li>
+                    <li><a href="mailto:info@simplycode.org">info@wesimplycode.org</a></li>
                 </ul>
             </div>
             

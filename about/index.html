@@ -6,98 +6,42 @@
     <title>Our Team - Simply Code</title>
     <link rel="stylesheet" href="../index.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-      .team-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 3rem;
-        padding: 2rem;
-        margin: 2rem 0;
-      }
-
-      .team-member {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        background: white;
-        padding: 2rem;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-      }
-
-      .team-member:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-      }
-
-      .team-member img {
-        width: 300px;
-        height: 400px;
-        object-fit: cover;
-        transition: all 0.3s ease;
-      }
-
-      .team-member h3 {
-        margin-top: 1.5rem;
-        margin-bottom: 0.5rem;
-        color: var(--deep-blue);
-        font-family: "Space Grotesk", sans-serif;
-        font-size: 1.5rem;
-      }
-
-      .team-member p {
-        color: var(--royal-blue);
-        font-size: 1.1rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .social-links {
-        display: flex;
-        gap: 1rem;
-        margin-top: 1rem;
-      }
-
-      .social-links a {
-        color: var(--royal-blue);
-        font-size: 1.2rem;
-        transition: all 0.3s ease;
-      }
-
-      .social-links a:hover {
-        color: var(--accent-purple);
-        transform: translateY(-2px);
-      }
-    </style>
+  
   </head>
   <body>
     <nav>
-      <div class="container">
-        <div class="nav-content">
-          <div class="logo">
-            <img
-              src="../bettersimplycode.avif"
-              alt="Simply Code"
-              class="nav-logo"
-            />
+      <div class="nav-content">
+          <div class="nav-top">
+              <button class="mobile-menu-btn" aria-label="Toggle menu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </button>
           </div>
           <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/opportunities">Opportunities</a></li>
-            <li><a href="/join">Join Us</a></li>
-            <li><a href="/donate">Donate</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+              <li><a href="/" >Home</a></li>
+              <li><a href="/about" class="active">About Us</a></li>
+              <li><a href="/events">Events</a></li>
 
-    <div class="hero">
-      <div class="container">
-        <h1>Our Team</h1>
-        <p>Meet the people behind Simply Code</p>
+              <li><a href="/products">Products</a></li>
+              <li><a href="/join">Join Us</a></li>
+              <li><a href="/donate" class="btn-nav">Donate</a></li>
+          </ul>
       </div>
-    </div>
+  </nav>
+
+
+    <section class="hero">
+      <div class="container">
+          <div class="hero-content">
+              <h1>About Us</h1>
+            
+              <p>Learn more about the students behind Simply Code and our core values!</p>
+
+          </div>
+      </div>
+ 
+  </section>
 
     <div class="container">
       <section id="leadership">

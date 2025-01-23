@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products & Events - Simply Code</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <div class="nav-top">
+                <img style="height:50px;" src="../SC transparent.png" alt="Simply Code" class="nav-logo">
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/products" class="active">Products</a></li>
+                <li><a href="/join">Join Us</a></li>
+                <li><a href="/donate" class="btn-nav">Donate</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Our Programs</h1>
+            <p>Empowering students through innovative tech education</p>
+        </div>
+        <div class="bg-circle circle-1"></div>
+        <div class="bg-circle circle-2"></div>
+        <div class="bg-circle circle-3"></div>
+        <div class="bg-circle circle-4"></div>
+        <div class="bg-circle circle-5"></div>
+    </section>
+
+    <div class="container">
+        <section id="featured-programs">
+            <h2>Featured Programs</h2>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Coding Workshops</h3>
+                    <p>Learn Python, JavaScript, and more through hands-on projects</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Live instruction</li>
+                        <li><i class="fas fa-check"></i> Project-based learning</li>
+                        <li><i class="fas fa-check"></i> Beginner friendly</li>
+                    </ul>
+                    <button class="btn btn-primary">Register Now</button>
+                </div>
+
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Tech Mentorship</h3>
+                    <p>Get paired with industry professionals</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 1-on-1 guidance</li>
+                        <li><i class="fas fa-check"></i> Career advice</li>
+                        <li><i class="fas fa-check"></i> Portfolio review</li>
+                    </ul>
+                    <button class="btn btn-primary">Apply Now</button>
+                </div>
+
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Project Accelerator</h3>
+                    <p>Build and launch your own tech projects</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Team collaboration</li>
+                        <li><i class="fas fa-check"></i> Expert feedback</li>
+                        <li><i class="fas fa-check"></i> Demo day</li>
+                    </ul>
+                    <button class="btn btn-primary">Join Program</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="upcoming-events">
+            <h2>Upcoming Events</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="month">MAR</span>
+                        <span class="day">15</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Web Development Bootcamp</h3>
+                        <p><i class="fas fa-clock"></i> 2:00 PM - 4:00 PM PST</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Online (Zoom)</p>
+                        <button class="btn">Register</button>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="month">APR</span>
+                        <span class="day">01</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Python for Beginners</h3>
+                        <p><i class="fas fa-clock"></i> 3:00 PM - 5:00 PM PST</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Online (Zoom)</p>
+                        <button class="btn">Register</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="mailto:info@simplycode.org">info@wesimplycode.org</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Stay updated with our latest news and events.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Simply Code. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            const body = document.body;
+
+            menuBtn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                body.classList.toggle('menu-open');
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuBtn.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    body.classList.remove('menu-open');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
