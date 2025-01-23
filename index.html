@@ -27,66 +27,72 @@
     <div class="hero">
         <div class="container">
             <h1>Simply Code</h1>
-            <p id="typing-text"></p>
+            <p id="typing-text" style="font-size: 3rem;"></p>
         </div>
     </div>
 
+    
+
     <div class="container">
         <section id="mission">
-            <h2>Our Mission</h2>
-            <p>Simply Code is an educational technology organization that offers free project-oriented workshops and so much more! Made for groups often left behind in our rapidly growing tech-savvy world, Simply Code combines tech education and digital citizenship to empower youth in their technology journey.</p>
+            <h2 style="font-size: 2.5rem;">Our Mission</h2>
+            <p style="font-size: 1.25rem;">Simply Code is an educational technology organization that offers free project-oriented workshops and so much more! Made for groups often left behind in our rapidly growing tech-savvy world, Simply Code combines tech education and digital citizenship to empower youth in their technology journey.</p>
         </section>
 
-        <section id="impact">
-            <h2>Our Impact</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <h3>2,500+</h3>
-                    <p>Students Taught</p>
-                </div>
-                <div class="stat-card">
-                    <h3>150+</h3>
-                    <p>Workshops Delivered</p>
-                </div>
-                <div class="stat-card">
-                    <h3>45+</h3>
-                    <p>Partner Schools</p>
-                </div>
-                <div class="stat-card">
-                    <h3>98%</h3>
-                    <p>Student Satisfaction</p>
-                </div>
-                <div class="stat-card">
-                    <h3>25+</h3>
-                    <p>Cities Reached</p>
-                </div>
-            </div>
-        </section>
 
         <section id="opportunities">
             <h2>Opportunities</h2>
             <div class="opportunities-grid">
                 <div class="opp-card">
-                    <h3>Coding Workshops</h3>
+                    <h3>Workshops</h3>
                     <p>Join our hands-on coding workshops where you'll build real projects using Python, JavaScript, and more.</p>
                     <button class="btn">Join Workshop</button>
                 </div>
                 <div class="opp-card">
-                    <h3>Tech Community</h3>
-                    <p>Connect with like-minded peers, mentors, and industry professionals in our growing tech community.</p>
+                    <h3>Project Showcase</h3>
+                    <p>XYZ.</p>
                     <button class="btn">Join Community</button>
                 </div>
                 <div class="opp-card">
-                    <h3>Build Projects</h3>
-                    <p>Work on meaningful projects that solve real-world problems while building your portfolio.</p>
+                    <h3>Placeholder</h3>
+                    <p>XYZ.</p>
                     <button class="btn">Start Building</button>
                 </div>
             </div>
         </section>
+        
+        <section id="impact-numbers">
+            <h2>Our Impact</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>2,500+</h3>
+                    <p>Students Reached</p>
+                    <p>Empowering the next generation of tech innovators through hands-on learning experiences.</p>
+                </div>
+                <div class="stat-card">
+                    <h3>150+</h3>
+                    <p>Workshops Conducted</p>
+                    <p>Interactive sessions covering everything from basic coding to advanced web development.</p>
+                </div>
+                <div class="stat-card">
+                    <h3>45+</h3>
+                    <p>School Partners</p>
+                    <p>Building strong relationships with educational institutions across the country.</p>
+                </div>
+                <div class="stat-card">
+                    <h3>25+</h3>
+                    <p>Cities Served</p>
+                    <p>Expanding our reach to bring coding education to communities nationwide.</p>
+                </div>
+            </div>
+        </section>
+        </section>
+
+      
 
         <section id="about">
-            <h2>Who Are We?</h2>
-            <p>We're a passionate team of high school students dedicated to making technology education acessible to everyone. From hosting interactive workshops to creating engaging learning experiences, our mission to make tech simple starts with the belief that anyone can code.</p>
+            <h2 style="font-size: 2.5rem">Who Are We?</h2>
+            <p style="font-size: 1.125rem;">We're a passionate team of high school students dedicated to making technology education acessible to everyone. From hosting interactive workshops to creating engaging learning experiences, our mission to make tech simple starts with the belief that anyone can code.</p>
         </section>
     </div>
 
@@ -113,7 +119,6 @@
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let isWaiting = false;
 
     function type() {
         const currentText = texts[textIndex];
@@ -129,30 +134,29 @@
             charIndex++;
         }
 
-        // Speed control
-        let typeSpeed = isDeleting ? 50 : 100;
+        // Dynamic speed control
+        let typeSpeed = isDeleting ? 30 : 50;  // Faster deletion, slower typing
 
         // Check if word is complete
         if (!isDeleting && charIndex === currentText.length) {
-            // Wait at end of word
+            // Pause at end of word
             typeSpeed = 2000;
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             // Move to next word
             textIndex = (textIndex + 1) % texts.length;
-            // Wait before starting new word
+            // Pause before starting new word
             typeSpeed = 500;
         }
 
         setTimeout(type, typeSpeed);
     }
 
-    // Start the typing animation
+    // Start the typing animation with a delay
     window.onload = function() {
-        setTimeout(type, 1000); // Delay start by 1 second
+        setTimeout(type, 1000);
     }
     </script>
 </body>
 </html>
-
