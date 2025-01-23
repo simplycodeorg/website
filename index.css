@@ -516,3 +516,38 @@ footer p{
     padding: 2rem;
     margin: 2rem 0;
 }
+
+.mobile-warning {
+    display: none;  /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 9999;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-warning h1 {
+    color: var(--deep-blue);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.mobile-warning p {
+    color: var(--royal-blue);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Hide main content when warning is shown */
+.mobile-hidden {
+    display: none !important;
+}
