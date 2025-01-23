@@ -701,6 +701,7 @@ footer {
 .mobile-hidden {
     display: none !important;
 }
+<<<<<<< HEAD
 
 /* Base section styles */
 section {
@@ -995,3 +996,5 @@ section h2 {
 .logo-scroll:hover .logo-container {
     animation-play-state: paused;
 }
+=======
+>>>>>>> f5c4651fa3413801524c6d2bed3a940c10a5769f
