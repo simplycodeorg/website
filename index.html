@@ -5,6 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Snippets</title>
     <link rel="stylesheet" href="index.css">
+    <script>
+    const texts = [
+        "Breaking down barriers in tech education.",
+        "Making coding accessible to every student.",
+        "By students, for students.",
+        "Where complex tech becomes simply understood.",
+        "Empowering the next generation of innovators.",
+        "Building a more inclusive tech future.",
+        "Tech education shouldn't be complicated.",
+        "Learning to code, one project at a time.",
+        "Transforming tech education, student by student.",
+        "Where passion meets programming."
+    ];
+
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+        const currentText = texts[textIndex];
+        const typingText = document.getElementById('typing-text');
+        
+        if (isDeleting) {
+            // Deleting text
+            typingText.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            // Typing text
+            typingText.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        // Dynamic speed control
+        let typeSpeed = isDeleting ? 30 : 50;  // Faster deletion, slower typing
+
+        // Check if word is complete
+        if (!isDeleting && charIndex === currentText.length) {
+            // Pause at end of word
+            typeSpeed = 2000;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            // Move to next word
+            textIndex = (textIndex + 1) % texts.length;
+            // Pause before starting new word
+            typeSpeed = 500;
+        }
+
+        setTimeout(type, typeSpeed);
+    }
+
+    // Start the typing animation with a delay
+    window.onload = function() {
+        setTimeout(type, 1000);
+    }
+    </script>
+    <script>
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
+                || window.innerWidth <= 768;
+        }
+
+        function showMobileWarning() {
+            if (isMobile()) {
+                // Create warning element
+                const warning = document.createElement('div');
+                warning.className = 'mobile-warning';
+                warning.innerHTML = `
+                    <h1>Mobile Version Coming Soon</h1>
+                    <p>We're currently optimizing this page for mobile devices. Please visit us on a desktop computer for the best experience.</p>
+                `;
+                
+                // Hide all content
+                document.body.querySelectorAll('*').forEach(element => {
+                    if (element !== warning && element.tagName !== 'SCRIPT' && element.tagName !== 'STYLE') {
+                        element.classList.add('mobile-hidden');
+                    }
+                });
+                
+                // Show warning
+                document.body.appendChild(warning);
+            }
+        }
+
+        // Run on page load
+        window.addEventListener('load', showMobileWarning);
+        
+        // Run on resize (in case window is resized to mobile dimensions)
+        window.addEventListener('resize', showMobileWarning);
+    </script>
 </head>
 <body>
     <nav>
