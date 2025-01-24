@@ -3,31 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate - Simply Code</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Join Us - Simply Code</title>
+    <link rel="stylesheet" href="../index.css">
+    <meta http-equiv="refresh" content="3;url=https://tally.so/r/wLvD71">
+    <style>
+        .redirect-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .redirect-text {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--deep-blue);
+        }
+        
+        .redirect-link {
+            color: var(--royal-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .redirect-link:hover {
+            color: var(--accent-purple);
+            text-decoration: underline;
+        }
+
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid var(--light-blue);
+            border-bottom-color: var(--royal-blue);
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+            margin: 2rem 0;
+        }
+
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 <body>
     <nav>
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo">
-                    <img src="/bettersimplycode.avif" alt="Simply Code" class="nav-logo">
-                </div>
-                <ul class="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/opportunities">Opportunities</a></li>
-                    <li><a href="/join">Join Us</a></li>
-                    <li><a href="/donate">Donate</a></li>
-                </ul>
+        <div class="nav-content">
+            <div class="nav-top">
+                <img style="height:50px;" src="../SC transparent.png" alt="Simply Code" class="nav-logo">
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/join">Join Us</a></li>
+                <li><a href="/donate" class="active btn-nav" >Donate</a></li>
+            </ul>
         </div>
     </nav>
-    <div class="container">
-        <section id="donate">
-            <h2>Support Our Mission</h2>
-            <!-- Add your donation form or content here -->
-        </section>
+
+
+    <div class="redirect-container">
+        <p class="redirect-text">Redirecting to Simply Code Donations...</p>
+        <span class="loader"></span>
+        <p>If you are not redirected soon, <a href="https://hcb.hackclub.com/donations/start/simply-code" class="redirect-link">click here</a></p>
     </div>
+
+    <footer>
+        <div class="container">
+            <p>Copyright © 2024 Simply Code</p>
+        </div>
+    </footer>
+
+    <script>
+        // Backup JavaScript redirect
+        setTimeout(function() {
+            window.location.href = "https://hcb.hackclub.com/donations/start/simply-code";
+        }, 600);
+    </script>
 </body>
 </html> 

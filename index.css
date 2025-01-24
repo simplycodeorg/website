@@ -406,7 +406,8 @@ main {
 
 /* Updated Footer Styles */
 footer {
-    background: linear-gradient(to bottom, var(--off-white), #f5f3ff);  /* Light purple gradient */
+    margin-top: 6rem;  /* Alternative approach */
+    background: linear-gradient(to bottom, var(--off-white), #f5f3ff);
     color: var(--dark-text);
     padding: 4rem 0 0 0;
     position: relative;
@@ -415,6 +416,8 @@ footer {
 
 .footer-content {
     max-width: 1200px;
+    font-family: 'Inter', sans-serif;
+
     margin: 0 auto;
     padding: 0 2rem;
     display: grid;
@@ -498,8 +501,12 @@ footer {
 
 .social-link:hover {
     background: var(--light-purple);
-    color: white;
+    color: white !important;  /* Force white color on hover */
     transform: translateY(-3px);
+}
+
+.social-link:hover i {
+    color: white;  /* Ensure icon itself turns white */
 }
 
 /* Specific icon adjustments */
@@ -511,30 +518,25 @@ footer {
 .newsletter-form {
     display: flex;
     gap: 0.5rem;
+    margin-top: 1rem;
 }
 
 .newsletter-form input {
-    background: white;
-    border: 1px solid rgba(124, 58, 237, 0.2);
-    color: var(--dark-text);
     flex: 1;
     padding: 0.8rem;
-    border-radius: 4px;
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    border-radius: 5px;
     outline: none;
 }
 
-.newsletter-form input::placeholder {
-    color: var(--gray-text);
-}
-
 .newsletter-form button {
+    padding: 0.8rem 1.5rem;
     background: var(--light-purple);
     color: white;
-    padding: 0.8rem 1.5rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease;
 }
 
 .newsletter-form button:hover {
@@ -653,18 +655,25 @@ footer {
 }
 
 .team-member img {
-    width: 250px;
-    height: 300px;
+    width: 100%;
+    height: 300px;  /* Fixed height for consistency */
     object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(93, 94, 212, 0.2);
-    transition: all 0.3s ease;
-    margin-bottom: 2rem;
+    border-radius: 15px 15px 0 0;
+    /* Specific adjustments for each team member */
 }
 
-.team-member img:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(93, 94, 212, 0.3);
+/* Individual image position adjustments */
+[alt="Jeff"] {
+    object-position: center 20%;  /* Move image up */
+}
+
+[alt="Misha"] {
+    object-position: center 30%;  /* Move image up slightly */
+}
+
+
+[alt="Anushka"] {
+    object-position: center 20%;  /* Move image up */
 }
 
 .team-member h3 {
@@ -1490,3 +1499,202 @@ section h2 {
 .delay-1 { animation-delay: 0.2s; }
 .delay-2 { animation-delay: 0.4s; }
 .delay-3 { animation-delay: 0.6s; }
+
+/* Add spacing between core team and footer */
+#core-team {
+    margin-bottom: 6rem;  /* Adds significant space before footer */
+}
+
+/* Featured Programs */
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.program-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(93, 94, 212, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+}
+
+.program-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, var(--light-purple), var(--deep-purple));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.program-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.program-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark-text);
+}
+
+.program-card p {
+    color: var(--gray-text);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.program-card ul {
+    list-style: none;
+    margin: 1.5rem 0;
+    padding: 0;
+}
+
+.program-card ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--gray-text);
+}
+
+.program-card ul li i {
+    color: var(--light-purple);
+}
+
+.program-card .btn {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Upcoming Events */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.event-card {
+    display: flex;
+    gap: 1.5rem;
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(93, 94, 212, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--light-purple);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    min-width: 80px;
+}
+
+.event-date .month {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.event-date .day {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.event-details {
+    flex: 1;
+}
+
+.event-details h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--dark-text);
+}
+
+.event-details p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gray-text);
+    margin-bottom: 0.8rem;
+}
+
+.event-details .btn {
+    margin-top: 1rem;
+}
+
+/* Button Styles */
+.btn {
+    background: var(--light-purple);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: var(--deep-purple);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .event-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .event-date {
+        width: 100px;
+        margin: 0 auto;
+    }
+
+    .event-details p {
+        justify-content: center;
+    }
+}
+
+/* Developer Card Styles */
+.developer-card {
+    border: 2px solid var(--light-purple);
+    box-shadow: 0 5px 20px rgba(124, 58, 237, 0.15);
+}
+
+.dev-badge {
+    font-size: 0.7rem;
+    background: linear-gradient(45deg, var(--light-purple), var(--deep-purple));
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    font-weight: normal;
+}
+
+.developer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.2);
+}
