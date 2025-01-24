@@ -33,16 +33,21 @@
 
 
    
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Events</h1>
-              
-                <p>Learn more about upcoming events!</p>
-  
+    <section class="hero" style="background: linear-gradient(135deg, 
+    #9d7af3 0%,    /* Lighter purple */
+    #7046d3 50%,   /* Medium purple */
+    #4b23b7 100%   /* Deeper purple */
+);">        <div class="container">
+            <div class="about-hero-grid">
+                <div class="about-hero-text">
+                    <h1>
+                        Events 
+                       
+                    </h1>
+                    <p style="color: white;">Learn more about upcoming events!</p>
+                </div>
             </div>
         </div>
-   
     </section>
 
     <div class="container">
@@ -93,8 +98,8 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <img style="height:80px;" src="/SC transparent.png" alt="Simply Code" class="footer-logo">
-                <p>Empowering the next generation of tech innovators through accessible education.</p>
+                <img style="height:80px;" src=".././SC transparent.png" alt="Simply Code" class="footer-logo">
+                <p>Empowering the next generation of students through accessible education.</p>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/company/simply-codeorg" class="social-link" target="_blank" aria-label="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
@@ -115,7 +120,7 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="/about">About Us</a></li>
-                    <li><a href="/opportunities">Opportunities</a></li>
+                    <li><a href="/events">Events</a></li>
                     <li><a href="/join">Join Us</a></li>
                     <li><a href="/donate">Donate</a></li>
                 </ul>
@@ -139,9 +144,272 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 Simply Code. All rights reserved. <br> <br>Developed by <span class="dev-signature">Rudra</span></p>
+            <div class="dev-credit">
+                Developed by<span class="dev-signature">Rudra</span>
+            </div>
+            <p>&copy; 2025 Simply Code. All rights reserved.</p>
         </div>
     </footer>
+    <style>
 
+
+        
+    
+.about-hero-grid {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .about-hero-text {
+        color: white;
+    }
+
+    .about-hero-text h1 {
+        font-size: 4.5rem;
+        font-weight: 800;
+        margin-bottom: 1.2rem;
+        font-family: 'Space Grotesk', sans-serif;
+        animation: fadeInUp 0.8s ease-out;
+        background: linear-gradient(135deg, #ffffff 0%, #e0d5ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+
+    .about-hero-text p {
+        font-size: 1.4rem;
+        line-height: 1.6;
+        opacity: 0.95;
+        animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        color: #f0e6ff;
+        max-width: 600px;
+        margin: 0 auto;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    @keyframes moveBackground {
+        0% {
+            background-position: 0 0, 0 0, 0 0;
+        }
+        100% {
+            background-position: 50px 50px, 25px 25px, 25px 25px;
+        }
+    }
+
+     /* Update footer developer signature */
+     .footer-bottom {
+        text-align: center;
+        padding: 1.5rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dev-signature {
+        background: linear-gradient(45deg, var(--light-purple), var(--deep-purple));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 600;
+        font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .footer-bottom .dev-credit {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .about-hero-text h1 {
+            font-size: 3.5rem;
+        }
+
+        .about-hero-text p {
+            font-size: 1.2rem;
+            padding: 0 20px;
+        }
+
+        .network-background {
+            background-size: 30px 30px, 15px 15px, 15px 15px;
+        }
+    }
+
+    .hero {
+        background: linear-gradient(135deg, 
+            #9d7af3 0%,    /* Lighter purple */
+            #7046d3 50%,   /* Medium purple */
+            #4b23b7 100%   /* Deeper purple */
+        );
+        min-height: 65vh;
+        padding: 80px 0 60px 0;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+
+        @keyframes moveBackground {
+            0% {
+                background-position: 0 0, 0 0, 0 0;
+            }
+            100% {
+                background-position: 50px 50px, 25px 25px, 25px 25px;
+            }
+        }
+    
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    
+        @media (max-width: 768px) {
+            .about-hero-text h1 {
+                font-size: 3.5rem;
+            }
+    
+            .about-hero-text p {
+                font-size: 1.2rem;
+                padding: 0 20px;
+            }
+    
+            .network-background {
+                background-size: 30px 30px, 15px 15px, 15px 15px;
+            }
+        }
+    
+        .hero {
+            background: linear-gradient(135deg, 
+                #9d7af3 0%,    /* Lighter purple */
+                #7046d3 50%,   /* Medium purple */
+                #4b23b7 100%   /* Deeper purple */
+            );
+            min-height: 65vh;
+            padding: 80px 0 60px 0;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+    
+        .team-member {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+    
+        /* Update section headers without underlines */
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--dark-text);
+            /* Removed the ::after pseudo-element that created the purple line */
+        }
+    
+        /* If there was a specific ::after style, we'll remove it */
+        section h2::after {
+            display: none;
+        }
+    
+        /* Update departments section styling */
+        #departments {
+            padding: 4rem 0;
+            background: transparent; /* Remove gray background */
+        }
+    
+        .department-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    
+        .department-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+    
+        /* Update core team section styling */
+        #core-team {
+            padding: 4rem 0;
+            background: transparent; /* Remove gray background */
+        }
+    
+        .team-member {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+
+        /* Update mentorship section styling */
+        #mentorship {
+            padding: 4rem 0;
+            background: transparent; /* Remove gray background */
+        }
+
+        .opp-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .opp-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    
 </body>
 </html> 

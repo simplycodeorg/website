@@ -5,54 +5,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join Us - Simply Code</title>
     <link rel="stylesheet" href="../index.css">
-    <meta http-equiv="refresh" content="3;url=https://tally.so/r/wLvD71">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+ 
     <style>
-        .redirect-container {
+        .options-container {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            justify-content: flex-start;
+            padding: 6rem 2rem;
+            background: transparent;
+        }
+        
+        .options-heading-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto 3rem;
             padding: 2rem;
+            background: linear-gradient(45deg, var(--light-purple), var(--deep-purple));
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(93, 94, 212, 0.2);
         }
         
-        .redirect-text {
-            font-size: 1.5rem;
+        .options-heading {
+            font-size: 2.8rem;
+            color: white;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
             margin-bottom: 1rem;
-            color: var(--deep-blue);
         }
         
-        .redirect-link {
-            color: var(--royal-blue);
-            text-decoration: none;
+        .options-subheading {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        /* Update footer developer signature */
+    .footer-bottom {
+        text-align: center;
+        padding: 1.5rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dev-signature {
+        background: linear-gradient(45deg, var(--light-purple), var(--deep-purple));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 600;
+        font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .footer-bottom .dev-credit {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    } 
+        .option-button {
+            padding: 3rem;
+            background-color: white;
+            color: var(--dark-text);
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
             transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+            box-shadow: 0 5px 15px rgba(93, 94, 212, 0.1);
+            position: relative;
+            overflow: hidden;
         }
         
-        .redirect-link:hover {
-            color: var(--accent-purple);
-            text-decoration: underline;
+        .option-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--light-purple), var(--deep-purple));
         }
-
-        .loader {
-            width: 48px;
-            height: 48px;
-            border: 5px solid var(--light-blue);
-            border-bottom-color: var(--royal-blue);
-            border-radius: 50%;
-            display: inline-block;
-            box-sizing: border-box;
-            animation: rotation 1s linear infinite;
-            margin: 2rem 0;
+        
+        .option-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(93, 94, 212, 0.2);
         }
-
-        @keyframes rotation {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
+        
+        .option-title {
+            font-weight: bold;
+            font-size: 1.8rem;
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--dark-text);
+        }
+        
+        .option-description {
+            font-size: 1.1rem;
+            color: var(--gray-text);
+            line-height: 1.5;
         }
     </style>
 </head>
@@ -77,25 +140,79 @@
             </ul>
         </div>
     </nav>
-
-
-    <div class="redirect-container">
-        <p class="redirect-text">Redirecting to Simply Code Internship Application...</p>
-        <span class="loader"></span>
-        <p>If you are not redirected soon, <a href="https://tally.so/r/wLvD71" class="redirect-link">click here</a></p>
+    <br>
+<br>
+    <div class="options-container">
+        <div class="options-heading-container">
+            <h1 class="options-heading">Join Our Mission</h1>
+            <p class="options-subheading">Whether you're a student looking to make an impact or an organization wanting to partner, there's a place for you here.</p>
+        </div>
+        <div class="options-grid">
+            <a href="https://tally.so/r/wLvD71" class="option-button">
+                <span class="option-title">Join Our Team</span>
+                <span class="option-description">Become part of our dynamic team and help shape the future of tech education. Perfect for students looking to make an impact.</span>
+            </a>
+            <a href="#" class="option-button">
+                <span class="option-title">Become a Partner</span>
+                <span class="option-description">Partner with us to expand our reach and create meaningful opportunities for students in tech education.</span>
+            </a>
+        </div>
     </div>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Simply Code. All rights reserved. <br> <br>Developed by <span class="dev-signature">Rudra</span></p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <img style="height:80px;" src="../SC transparent.png" alt="Simply Code" class="footer-logo">
+                <p>Empowering the next generation of students through accessible education.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/simply-codeorg" class="social-link" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/simplycodeofficial" class="social-link" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@simplycodeofficial" class="social-link" target="_blank" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@simplycode101" class="social-link" target="_blank" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/events">Events</a></li>
+                    <li><a href="/join">Join Us</a></li>
+                    <li><a href="/donate">Donate</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="mailto:info@wesimplycode.org">info@wesimplycode.org</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Stay updated with our latest news and events.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="dev-credit">
+                Developed by<span class="dev-signature">Rudra</span>
+            </div>
+            <p>&copy; 2025 Simply Code. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        // Backup JavaScript redirect
-        setTimeout(function() {
-            window.location.href = "https://tally.so/r/wLvD71";
-        }, 600);
-    </script>
 </body>
 </html> 
