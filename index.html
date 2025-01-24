@@ -44,202 +44,205 @@
     </script>
 </head>
 <body>
-    <nav>
-        <div class="nav-content">
-            <div class="nav-top">
-                <img style="height:50px;" src="../SC transparent.png" alt="Simply Code" class="nav-logo">
+        <nav>
+            <div class="nav-content">
+                <div class="nav-top">
+                    <img style="height:50px;" src="../SC transparent.png" alt="Simply Code" class="nav-logo">
 
-                <button class="mobile-menu-btn" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-            <ul class="nav-links">
-                <li><a href="/" class="active">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/events">Events</a></li>
-
-                <li><a href="/products">Products</a></li>
-                <li><a href="/join">Join Us</a></li>
-                <li><a href="/donate" class="btn-nav">Donate</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Simply Code</h1>
-                <!-- <div class="tagline-container">
-                 <div id="typing-text"></div> 
-                </div> -->
-                <p>Building the future of tech education, one student at a time</p>
-                <div class="btn-container">
-                    <a  style ="text-decoration:none;" href="/products" class="btn btn-primary">Our Products</a>
-                    <a style="text-decoration:none;" href="/events" class="btn btn-secondary">Explore Events</a>
+                    <button class="mobile-menu-btn" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
-            </div>
-        </div>
-        <div class="bg-circle circle-1"></div>
-        <div class="bg-circle circle-2"></div>
-        <div class="bg-circle circle-3"></div>
-        <div class="bg-circle circle-4"></div>
-        <div class="bg-circle circle-5"></div>
-    </section>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const text = "Breaking down barriers in tech education";
-            const typingText = document.getElementById('typing-text');
-            let i = 0;
-
-            function typeWriter() {
-                if (i < text.length) {
-                    typingText.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 100);
-                }
-            }
-
-            setTimeout(typeWriter, 500);
-        });
-    </script>
-
-    <div class="container">
-        <section id="partners">
-            <h2>Our Partners</h2>
-            <div class="logo-scroll">
-                <div class="logo-container">
-                    <img src="/partners/civics.jpg" alt="Google">
-                    <img src="/partners/hackclub.png" alt="Microsoft">
-                </div>
-            </div>
-        </section>
-
-
-        <section id="opportunities">
-            <h2>Events</h2>
-            <div class="opportunities-grid">
-                <div class="opp-card">
-                    <h3>Workshops</h3>
-                    <p>Join our hands-on coding workshops where you'll build real projects using Python, JavaScript, and more.</p>
-                    <button class="btn">Join Workshop</button>
-                </div>
-                <div class="opp-card">
-                    <h3>Conferences</h3>
-                    <p>Connect with industry leaders and fellow students at our tech conferences. Learn about the latest trends, showcase your projects, and expand your network.</p>
-                    <button class="btn">Join Community</button>
-                </div>
-                <div class="opp-card">
-                    <h3>Courses</h3>
-                    <p>Access our structured learning paths covering web development, Python programming, and digital citizenship. Perfect for beginners and intermediate learners.</p>
-                    <button class="btn">Start Learning</button>
-                </div>
-            </div>
-        </section>
-        
-        <section id="impact-numbers">
-            <h2>Our Impact</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <h3>80+</h3>
-                    <p>Students Reached</p>
-                </div>
-                <div class="stat-card">
-                    <h3>2+</h3>
-                    <p>Workshops Conducted</p>
-                </div>
-                <div class="stat-card">
-                    <h3>5+</h3>
-                    <p>Partners</p>
-                </div>
-                <div class="stat-card">
-                    <h3>25+</h3>
-                    <p>Members</p>
-                </div>
-            </div>
-        </section>
-        </section>
-
-      
-
-    </div>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <img style="height:80px;" src="SC transparent.png" alt="Simply Code" class="footer-logo">
-                <p>Empowering the next generation of tech innovators through accessible education.</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/company/simply-codeorg" class="social-link" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://www.instagram.com/simplycodeofficial" class="social-link" target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@simplycodeofficial" class="social-link" target="_blank" aria-label="TikTok">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@simplycode101" class="social-link" target="_blank" aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
+                <ul class="nav-links">
+                    <li><a href="/" class="active">Home</a></li>
                     <li><a href="/about">About Us</a></li>
-                    <li><a href="/opportunities">Opportunities</a></li>
+                    <li><a href="/events">Events</a></li>
+
+                    <li><a href="/products">Products</a></li>
                     <li><a href="/join">Join Us</a></li>
-                    <li><a href="/donate">Donate</a></li>
+                    <li><a href="/donate" class="btn-nav">Donate</a></li>
                 </ul>
             </div>
-            
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <ul>
-                    <li><a href="mailto:info@wesimplycode.org">info@wesimplycode.org</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Newsletter</h3>
-                <p>Stay updated with our latest news and events.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2024 Simply Code. All rights reserved. <br> <br>Developed by <span class="dev-signature">Rudra</span></p>
-        </div>
-    </footer>
+        </nav>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            const navLinks = document.querySelector('.nav-links');
-            const body = document.body;
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Simply Code</h1>
+                    <!-- <div class="tagline-container">
+                     <div id="typing-text"></div> 
+                    </div> -->
+                    <p>Building the future of tech education, one student at a time</p>
+                    <div class="btn-container">
+                        <a  style ="text-decoration:none;" href="/products" class="btn btn-primary">Our Products</a>
+                        <a style="text-decoration:none;" href="/events" class="btn btn-secondary">Explore Events</a>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-circle circle-1"></div>
+            <div class="bg-circle circle-2"></div>
+            <div class="bg-circle circle-3"></div>
+            <div class="bg-circle circle-4"></div>
+            <div class="bg-circle circle-5"></div>
+        </section>
 
-            menuBtn.addEventListener('click', function() {
-                this.classList.toggle('active');
-                navLinks.classList.toggle('active');
-                body.classList.toggle('menu-open');
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const text = "Breaking down barriers in tech education";
+                const typingText = document.getElementById('typing-text');
+                let i = 0;
+
+                function typeWriter() {
+                    if (i < text.length) {
+                        typingText.innerHTML += text.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 100);
+                    }
+                }
+
+                setTimeout(typeWriter, 500);
             });
+        </script>
 
-            // Close menu when clicking a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    menuBtn.classList.remove('active');
-                    navLinks.classList.remove('active');
-                    body.classList.remove('menu-open');
+        <div class="container">
+            <section id="partners">
+                <h2>Our Partners</h2>
+                <div class="logo-scroll">
+                    <div class="logo-container">
+                        <img src="/partners/civics.jpg" alt="Google">
+                        <img src="/partners/hackclub.png" alt="Microsoft">
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="opportunities">
+                <h2>Events</h2>
+                <div class="opportunities-grid">
+                    <div class="opp-card">
+                        <h3>Workshops</h3>
+                        <p>Join our hands-on coding workshops where you'll build real projects using Python, JavaScript, and more.</p>
+                        <button class="btn">Join Workshop</button>
+                    </div>
+                    <div class="opp-card">
+                        <h3>Conferences</h3>
+                        <p>Connect with industry leaders and fellow students at our tech conferences. Learn about the latest trends, showcase your projects, and expand your network.</p>
+                        <button class="btn">Join Community</button>
+                    </div>
+                    <div class="opp-card">
+                        <h3>Courses</h3>
+                        <p>Access our structured learning paths covering web development, Python programming, and digital citizenship. Perfect for beginners and intermediate learners.</p>
+                        <button class="btn">Start Learning</button>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="impact-numbers">
+                <h2>Our Impact</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>80+</h3>
+                        <p>Students Reached</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>2+</h3>
+                        <p>Workshops Conducted</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>5+</h3>
+                        <p>Partners</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>25+</h3>
+                        <p>Members</p>
+                    </div>
+                </div>
+            </section>
+            </section>
+
+          
+
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img style="height:80px;" src="SC transparent.png" alt="Simply Code" class="footer-logo">
+                    <p>Empowering the next generation of tech innovators through accessible education.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/simply-codeorg" class="social-link" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/simplycodeofficial" class="social-link" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@simplycodeofficial" class="social-link" target="_blank" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@simplycode101" class="social-link" target="_blank" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/opportunities">Opportunities</a></li>
+                        <li><a href="/join">Join Us</a></li>
+                        <li><a href="/donate">Donate</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:info@wesimplycode.org">info@wesimplycode.org</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Stay updated with our latest news and events.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Simply Code. All rights reserved. <br> <br>Developed by <span class="dev-signature">Rudra</span></p>
+            </div>
+        </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const menuBtn = document.querySelector('.mobile-menu-btn');
+                const navLinks = document.querySelector('.nav-links');
+                const body = document.body;
+
+                menuBtn.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                    body.classList.toggle('menu-open');
+                });
+
+                // Close menu when clicking a link
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuBtn.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        body.classList.remove('menu-open');
+                    });
                 });
             });
-        });
-    </script>
+        </script>
+
+       
+    </div>
 </body>
 </html>
