@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
     --white: #ffffff;
@@ -276,6 +277,8 @@ main {
 .btn-container {
     display: flex;
     gap: 1.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+
     justify-content: center;
 }
 
@@ -534,6 +537,8 @@ footer {
     background: var(--light-purple);
     color: white;
     border: none;
+    font-family: 'Space Grotesk', sans-serif;
+
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
@@ -676,6 +681,10 @@ footer {
     object-position: center 20%;  /* Move image up */
 }
 
+[alt="Rudra"] {
+    object-position: center 40%;  /* Moved up significantly to focus on face */
+}
+
 .team-member h3 {
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -776,6 +785,8 @@ section h2::after {
 .hero {
     background: var(--white);
     padding: 0;
+    font-family: "Space Grotesk", sans-serif;
+
 }
 
 #partners {
@@ -784,8 +795,8 @@ section h2::after {
 }
 
 #mission {
+    padding: 6rem 0;
     background: var(--white);
-    width: 100%;
 }
 
 #impact {
@@ -798,31 +809,68 @@ section h2::after {
 }
 
 /* Mission Section */
-#mission {
-    background: var(-white);
-    padding:30px;
-    font-size: 1.25rem;
-
-
-}
-
-#mission h2 {
-    background: var(--white);
-}
-
 .mission-content {
-    max-width: 900px;
-    text-align: center;
-    padding:30px;
-
-    background: var(-white);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
-.mission-content p {
-    font-size: 1.75rem;
-    line-height: 1.7;
+.mission-text h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, var(--light-purple), var(--deep-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.mission-main {
+    text-align: center;
+    font-size: 1.5rem;
     color: var(--gray-text);
+    line-height: 1.6;
+    margin-bottom: 4rem;
+    font-weight: 500;
+}
+
+.mission-points {
+    display: grid;
+    gap: 2rem;
+}
+
+.mission-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(93, 94, 212, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.mission-point:hover {
+    transform: translateY(-5px);
+}
+
+.mission-point i {
+    font-size: 1.8rem;
+    color: var(--light-purple);
+    background: rgba(124, 58, 237, 0.1);
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.mission-point h3 {
+    color: var(--dark-text);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.mission-point p {
+    color: var(--gray-text);
+    line-height: 1.6;
 }
 
 /* Impact Section */
@@ -850,7 +898,7 @@ section h2::after {
 }
 
 #opportunities h2 {
-    background: var(-white);
+    background: (-white);
 }
 
 .opportunities-grid {
@@ -1697,4 +1745,147 @@ section h2 {
 .developer-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(124, 58, 237, 0.2);
+}
+
+/* Department Section Styles */
+#departments {
+    padding: 6rem 0;
+    background: linear-gradient(to bottom, var(--white), var(--off-white));
+}
+
+.section-desc {
+    text-align: center;
+    color: var(--gray-text);
+    max-width: 800px;
+    margin: 1rem auto 4rem;
+    font-size: 1.1rem;
+}
+
+.departments-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* Force 4 columns */
+    gap: 1.5rem;  /* Reduced gap for better fit */
+    margin: 0 auto;
+    max-width: 1400px;  /* Increased max-width to accommodate all cards */
+    padding: 0 2rem;
+}
+
+.department-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(93, 94, 212, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.department-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(93, 94, 212, 0.2);
+}
+
+.department-card h3 {
+    color: var(--dark-text);
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+}
+
+/* Department card with colored icons */
+.department-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(93, 94, 212, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.department-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, var(--light-purple), var(--deep-purple));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.department-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.department-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(93, 94, 212, 0.2);
+}
+
+.department-card:hover .department-icon {
+    transform: scale(1.1);
+}
+
+.department-card h3 {
+    color: var(--dark-text);
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+}
+
+.dev-signature {
+    background: linear-gradient(45deg, #5b21b6, #c4b5fd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    padding: 0 2px;
+}
+
+/* Volunteer Hours Tracker Styles */
+.volunteer-hours {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(124, 58, 237, 0.05);
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.volunteer-hours i {
+    color: var(--light-purple);
+    font-size: 1rem;
+}
+
+.hours-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.hours-count {
+    font-weight: 600;
+    color: var(--deep-purple);
+    line-height: 1;
+    text-align: left;
+}
+
+.hours-label {
+    font-size: 0.75rem;
+    color: var(--gray-text);
+}
+
+/* Special styling for developer cards */
+.developer-card .volunteer-hours {
+    background: rgba(124, 58, 237, 0.1);
 }
