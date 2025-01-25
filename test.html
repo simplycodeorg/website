@@ -68,6 +68,9 @@
         </nav>
 
         <section class="hero">
+            <div class="network-background">
+                <canvas id="networkCanvas"></canvas>
+            </div>
             <div class="container">
                 <div class="hero-content">
                     <h1>Simply Code</h1>
@@ -81,11 +84,6 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-circle circle-1"></div>
-            <div class="bg-circle circle-2"></div>
-            <div class="bg-circle circle-3"></div>
-            <div class="bg-circle circle-4"></div>
-            <div class="bg-circle circle-5"></div>
         </section>
 
         <script>
@@ -350,100 +348,26 @@
 
     /* Updated Hero Section height */
     .hero {
-        min-height: 80vh; /* Reduced from 100vh */
-        padding: 120px 0 80px 0; /* Added padding to account for navbar */
-        display: flex;
-        align-items: center;
         position: relative;
         overflow: hidden;
-        background: var(--white);
+        min-height:65vh;
+
+        background: var(--off-white);
     }
 
-    /* Different animation patterns for each shape */
-    @keyframes floatUp {
-        0%, 100% {
-            transform: translateY(0) rotate(0deg);
-        }
-        50% {
-            transform: translateY(-50px) rotate(15deg);
-        }
+    .network-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        pointer-events: none;
     }
 
-    @keyframes floatDown {
-        0%, 100% {
-            transform: translateY(0) rotate(0deg);
-        }
-        50% {
-            transform: translateY(50px) rotate(-15deg);
-        }
-    }
-
-    @keyframes floatDiagonal {
-        0%, 100% {
-            transform: translate(0, 0) rotate(0deg);
-        }
-        50% {
-            transform: translate(30px, -40px) rotate(10deg);
-        }
-    }
-
-    @keyframes floatCircular {
-        0% {
-            transform: translate(0, 0) rotate(0deg);
-        }
-        33% {
-            transform: translate(30px, -30px) rotate(10deg);
-        }
-        66% {
-            transform: translate(-30px, -20px) rotate(-10deg);
-        }
-        100% {
-            transform: translate(0, 0) rotate(0deg);
-        }
-    }
-
-    @keyframes floatZigZag {
-        0% {
-            transform: translate(0, 0) rotate(0deg);
-        }
-        25% {
-            transform: translate(30px, -30px) rotate(10deg);
-        }
-        50% {
-            transform: translate(0, -50px) rotate(-5deg);
-        }
-        75% {
-            transform: translate(-30px, -30px) rotate(-10deg);
-        }
-        100% {
-            transform: translate(0, 0) rotate(0deg);
-        }
-    }
-
-    /* Apply different animations to each circle */
-    .circle-1 {
-        animation: floatZigZag 6s ease-in-out infinite;
-    }
-
-    .circle-2 {
-        animation: floatCircular 7s ease-in-out infinite;
-    }
-
-    .circle-3 {
-        animation: floatDiagonal 5s ease-in-out infinite;
-    }
-
-    .circle-4 {
-        animation: floatDown 4.5s ease-in-out infinite;
-    }
-
-    .circle-5 {
-        animation: floatUp 4s ease-in-out infinite;
-    }
-
-    /* Keep shapes visible */
-    .bg-circle {
-        opacity: 0.85;
+    #networkCanvas {
+        width: 100%;
+        height: 100%;
     }
 
     /* New section styling */
@@ -641,3 +565,120 @@
         font-size: 1.1rem;
     }
 </style>
+
+<script>
+    const canvas = document.getElementById('networkCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Set canvas size to match display size
+    function resizeCanvas() {
+        canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+        canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Increased node count and adjusted parameters
+    const nodeCount = 150; // Increased from 100
+    const connectionDistance = 120; // Increased from 100
+    let mouseX = 0;
+    let mouseY = 0;
+    let isMouseInCanvas = false;
+
+    // Node class with slightly faster movement
+    class Node {
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+            this.vx = (Math.random() - 0.5) * 0.8; // Increased velocity
+            this.vy = (Math.random() - 0.5) * 0.8;
+            this.radius = 2.5; // Slightly larger nodes
+        }
+
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+
+            if (this.x < 0 || this.x > canvas.offsetWidth) this.vx *= -1;
+            if (this.y < 0 || this.y > canvas.offsetHeight) this.vy *= -1;
+        }
+    }
+
+    // Create initial nodes
+    const nodes = [];
+    for (let i = 0; i < nodeCount; i++) {
+        nodes.push(new Node(
+            Math.random() * canvas.offsetWidth,
+            Math.random() * canvas.offsetHeight
+        ));
+    }
+
+    // Mouse interaction
+    canvas.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouseX = e.clientX - rect.left;
+        mouseY = e.clientY - rect.top;
+    });
+
+    canvas.addEventListener('mouseenter', () => {
+        isMouseInCanvas = true;
+    });
+
+    canvas.addEventListener('mouseleave', () => {
+        isMouseInCanvas = false;
+    });
+
+    // Drawing function with thicker lines
+    function animate() {
+        ctx.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+        ctx.fillStyle = ctx.strokeStyle = '#5D5ED4';
+        ctx.lineWidth = 1.5; // Thicker lines
+
+        // Update and draw nodes
+        nodes.forEach(node => {
+            node.update();
+            ctx.beginPath();
+            ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+            ctx.fill();
+        });
+
+        // Draw connections with higher minimum opacity
+        nodes.forEach((nodeA, i) => {
+            nodes.slice(i + 1).forEach(nodeB => {
+                const dx = nodeA.x - nodeB.x;
+                const dy = nodeA.y - nodeB.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < connectionDistance) {
+                    ctx.beginPath();
+                    ctx.moveTo(nodeA.x, nodeA.y);
+                    ctx.lineTo(nodeB.x, nodeB.y);
+                    ctx.globalAlpha = Math.max(0.2, 1 - (distance / connectionDistance)); // Minimum opacity of 0.2
+                    ctx.stroke();
+                }
+            });
+
+            // Enhanced mouse interaction
+            if (isMouseInCanvas) {
+                const dx = nodeA.x - mouseX;
+                const dy = nodeA.y - mouseY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                const mouseRadius = connectionDistance * 1.8; // Increased mouse interaction radius
+
+                if (distance < mouseRadius) {
+                    ctx.beginPath();
+                    ctx.moveTo(nodeA.x, nodeA.y);
+                    ctx.lineTo(mouseX, mouseY);
+                    ctx.globalAlpha = Math.max(0.3, 1 - (distance / mouseRadius)); // Higher minimum opacity for mouse connections
+                    ctx.stroke();
+                }
+            }
+        });
+
+        ctx.globalAlpha = 1;
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+</script>

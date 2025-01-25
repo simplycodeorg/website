@@ -50,50 +50,119 @@
         </div>
     </section>
 
-    <div class="container">
-        <section id="opportunities">
-            <h2>Opportunities</h2>
-            <div class="opportunities-grid">
-                <div class="opp-card">
-                    <div class="content">
-                        <h3>Workshops</h3>
-                        <p>Join our hands-on coding workshops where you'll build real projects using Python, JavaScript, and more.</p>
+    <section class="events-section">
+        <!-- Conferences Section First -->
+        <div class="section-card conferences">
+            <div class="container">
+                <div class="card-content">
+                    <div class="card-body">
+                        <h2>Conferences</h2>
+                        <div class="card-text">
+                            <span class="subtitle">Connect & Network</span>
+                            <p class="description">Join our tech conferences to hear from leading experts, network with peers, and stay updated with the latest in technology.</p>
+                            <div class="conference-features">
+                                <div class="feature">
+                                    <strong>Expert Speakers</strong>
+                                    <p>Learn from industry leaders and innovators</p>
+                                </div>
+                                <div class="feature">
+                                    <strong>Networking</strong>
+                                    <p>Connect with peers and build relationships</p>
+                                </div>
+                                <div class="feature">
+                                    <strong>Workshops</strong>
+                                    <p>Hands-on sessions with practical learning</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-primary">View Conferences</a>
                     </div>
-                    <button class="btn">Join Workshop</button>
-                </div>
-                <div class="opp-card">
-                    <div class="content">
-                        <h3>Conferences</h3>
-                        <p>Join our community of young developers and showcase your coding projects to the world.</p>
-                    </div>
-                    <button class="btn">Join Community</button>
-                </div>
-                <div class="opp-card">
-                    <div class="content">
-                        <h3>Courses</h3>
-                        <p>Collaborate with other students on exciting coding projects and learn from each other.</p>
-                    </div>
-                    <button class="btn">Start Building</button>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section id="mentorship">
-            <h2>Mentorship Program</h2>
-            <div class="opportunities-grid" style="grid-template-columns: 1fr 1fr;">
-                <div class="opp-card" style="text-align: center;">
-                    <h3>Find a Mentor</h3>
-                    <p style="font-size: 1.25rem;">Connect with experienced professionals who can guide your tech journey.</p>
-                    <button class="btn">Apply Now</button>
-                </div>
-                <div class="opp-card" style="text-align: center;">
-                    <h3>Become a Mentor</h3>
-                    <p style="font-size: 1.25rem;">Share your knowledge and experience with the next generation.</p>
-                    <button class="btn">Join Us</button>
+        <!-- Workshops Section Second -->
+        <div class="section-row workshops">
+            <div class="container">
+                <div class="row-content">
+                    <div class="content-left">
+                        <h2>Workshops</h2>
+                    </div>
+                    <div class="content-right">
+                        <p class="description" style="color: white;">Join our hands-on workshops led by industry experts. Perfect for learning new skills and getting practical experience.</p>
+                        <a href="#" class="btn btn-light">Explore Workshops</a>
+                    </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+
+        <!-- Chapters Section - Location Cards -->
+        <div class="section-split chapters">
+            <div class="container">
+                <div class="chapters-header">
+                    <h2>Chapters</h2>
+                    <p class="description">Find your local Simply Code chapter or start one in your area. Build connections and grow together.</p>
+                </div>
+                
+                <div class="chapter-cards">
+                    <!-- Philadelphia Chapter -->
+                    <div class="chapter-card">
+                        <div class="chapter-info">
+                            <h3>Philadelphia</h3>
+                            <p class="location">Pennsylvania</p>
+                            <div class="chapter-stats">
+                                <span>200+ Members</span>
+                                <span>Weekly Meetups</span>
+                            </div>
+                            <p class="chapter-desc">Join our thriving tech community in the heart of Philadelphia. Regular meetups at local tech hubs and universities.</p>
+                        </div>
+                        <a href="#" class="btn btn-primary">Join Chapter</a>
+                    </div>
+
+                    <!-- Atlanta Chapter -->
+                    <div class="chapter-card">
+                        <div class="chapter-info">
+                            <h3>Atlanta</h3>
+                            <p class="location">Georgia</p>
+                            <div class="chapter-stats">
+                                <span>150+ Members</span>
+                                <span>Bi-weekly Events</span>
+                            </div>
+                            <p class="chapter-desc">Connect with Atlanta's diverse tech scene. Regular events focusing on web development and emerging technologies.</p>
+                        </div>
+                        <a href="#" class="btn btn-primary">Join Chapter</a>
+                    </div>
+
+                    <!-- California Chapter -->
+                    <div class="chapter-card">
+                        <div class="chapter-info">
+                            <h3>San Francisco</h3>
+                            <p class="location">California</p>
+                            <div class="chapter-stats">
+                                <span>300+ Members</span>
+                                <span>Weekly Workshops</span>
+                            </div>
+                            <p class="chapter-desc">Be part of Silicon Valley's innovative community. Regular sessions with industry leaders and hands-on workshops.</p>
+                        </div>
+                        <a href="#" class="btn btn-primary">Join Chapter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mentorship Section - Minimal Style -->
+        <div class="section-minimal mentorship">
+            <div class="container">
+                <div class="minimal-content">
+                    <h2>Mentorship</h2>
+                    <div class="minimal-body">
+                        <p class="description">Get personalized guidance from experienced developers. Our mentorship program helps you achieve your coding goals faster.</p>
+                        <a href="#" class="btn btn-primary">Start Mentorship</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-content">
@@ -409,6 +478,247 @@
             transform: translateY(-5px);
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
         }
+
+    .events-section {
+        background: var(--off-white);
+        padding: 2rem 0;
+    }
+
+    /* Workshops - Gradient Style */
+    .section-row {
+        background: linear-gradient(45deg, var(--light-purple), var(--deep-purple));
+        padding: 4rem 0;
+        margin-bottom: 4rem;
+        color: white;
+    }
+
+    .row-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    .content-left {
+        flex: 0 0 300px;
+    }
+
+    .content-left h2 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: white;
+    }
+
+    .content-right {
+        flex: 1;
+    }
+
+    .description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        color: #4A4B57;
+    }
+
+    .btn {
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .btn-light {
+        background: white;
+        color: var(--deep-purple);
+    }
+
+    .btn-primary {
+        background: var(--deep-purple);
+        color: white;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(93, 94, 212, 0.2);
+    }
+
+    /* Conferences - Enhanced Card Style */
+    .section-card {
+        margin-bottom: 4rem;
+    }
+
+    .card-content {
+        background: white;
+        border-radius: 12px;
+        padding: 3.5rem;
+        box-shadow: 0 4px 15px rgba(93, 94, 212, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .card-content:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 25px rgba(93, 94, 212, 0.15);
+    }
+
+    .card-body {
+        text-align: left;
+    }
+
+    .card-text {
+        margin-bottom: 2.5rem;
+    }
+
+    .conference-features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(93, 94, 212, 0.1);
+    }
+
+    .feature {
+        padding: 1rem;
+        background: var(--off-white);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .feature:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(93, 94, 212, 0.1);
+    }
+
+    .feature strong {
+        display: block;
+        color: var(--deep-purple);
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    .feature p {
+        color: #4A4B57;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .card-content .btn-primary {
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+
+    /* Chapters - Location Cards */
+    .chapters-header {
+        text-align: left;
+        margin-bottom: 3rem;
+    }
+
+    .chapter-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .chapter-card {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 4px 15px rgba(93, 94, 212, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .chapter-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(93, 94, 212, 0.15);
+    }
+
+    .chapter-card h3 {
+        color: var(--deep-purple);
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .location {
+        color: #666;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .chapter-stats {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+        padding: 1rem 0;
+        border-top: 1px solid rgba(93, 94, 212, 0.1);
+        border-bottom: 1px solid rgba(93, 94, 212, 0.1);
+    }
+
+    .chapter-stats span {
+        color: #4A4B57;
+        font-size: 0.95rem;
+    }
+
+    .chapter-desc {
+        color: #4A4B57;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .chapter-card .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    @media (max-width: 992px) {
+        .chapter-cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .chapter-cards {
+            grid-template-columns: 1fr;
+            padding: 0 1rem;
+        }
+
+        .chapters-header {
+            padding: 0 1rem;
+        }
+    }
+
+    /* Mentorship - Minimal Style */
+    .section-minimal {
+        background: white;
+        padding: 3rem 0;
+        border-radius: 12px;
+        margin-bottom: 4rem;
+    }
+
+    .minimal-content {
+        border-bottom: 3px solid var(--light-purple);
+        padding-bottom: 2rem;
+    }
+
+    .minimal-content .btn-primary {
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        margin: 2rem auto 0;
+        display: block;
+    }
     </style>
     
 </body>
