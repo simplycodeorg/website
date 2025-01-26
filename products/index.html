@@ -59,8 +59,7 @@
           <div class="about-hero-text">
             <h1>Products</h1>
             <p>
-              Discover our innovative educational tools and resources designed
-              to make coding accessible and engaging for everyone.
+              Discover our innovative educational tools and resources powerful for story telling.
             </p>
           </div>
         </div>
@@ -69,48 +68,57 @@
 
     <div class="container">
       <section id="featured-programs">
+        <div class="mission-text">
+
+
         <h2>Featured Products</h2>
+        </div>
         <div class="programs-grid">
           <div class="program-card">
             <div class="program-icon">
-              <i class="fas fa-microchip"></i>
+              <i class="fas fa-gamepad"></i>
             </div>
-            <h3>Technology Showcase</h3>
-            <p>Experience cutting-edge technology demonstrations and interactive exhibits</p>
+            
+            <h3>Gallery Walk</h3>
+            <p>Experience how technology can interact with art</p>
             <ul>
-              <li><i class="fas fa-check"></i> Live tech demos</li>
-              <li><i class="fas fa-check"></i> Hands-on experiences</li>
-              <li><i class="fas fa-check"></i> Innovation displays</li>
+              <li><i class="fas fa-check"></i> Digital exhibits</li>
+              <li><i class="fas fa-check"></i> Technology history</li>
+              <li><i class="fas fa-check"></i> Interactive features</li>
             </ul>
-            <button class="btn btn-primary">Learn More</button>
+            <button class="btn btn-primary btn-container">View Gallery</button>
+            <!-- <button class="btn btn-primary">Submit Yours</button> -->
+      
           </div>
 
           <div class="program-card">
             <div class="program-icon">
-              <i class="fas fa-robot"></i>
+              <i class="fas fa-laptop-code"></i>
             </div>
-            <h3>Tech-Art-AI Gallery Walk</h3>
-            <p>Explore the intersection of technology, art, and artificial intelligence</p>
+            <h3>Courses</h3>
+            <p>Enjoy our structured learning paths for technology</p>
             <ul>
-              <li><i class="fas fa-check"></i> AI-generated artwork</li>
-              <li><i class="fas fa-check"></i> Interactive installations</li>
-              <li><i class="fas fa-check"></i> Digital art exhibits</li>
-            </ul>
-            <button class="btn btn-primary">View Gallery</button>
-          </div>
-
-          <div class="program-card">
-            <div class="program-icon">
-              <i class="fas fa-atom"></i>
-            </div>
-            <h3>Tech/STEM Courses</h3>
-            <p>Comprehensive learning programs in technology and STEM fields</p>
-            <ul>
-              <li><i class="fas fa-check"></i> Coding fundamentals</li>
-              <li><i class="fas fa-check"></i> STEM projects</li>
-              <li><i class="fas fa-check"></i> Hands-on learning</li>
+              <li><i class="fas fa-check"></i> Beginner friendly</li>
+              <li><i class="fas fa-check"></i> Hands on projects</li>
+              <li><i class="fas fa-check"></i> Personalized for you</li>
             </ul>
             <button class="btn btn-primary">Explore Courses</button>
+            
+          </div>
+
+          <div class="program-card">
+            <div class="program-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Annual Showcase</h3>
+            <p>Explore how technonology has been used for good</p>
+            <ul>
+              <li><i class="fas fa-check"></i> Live demonstrations</li>
+              <li><i class="fas fa-check"></i>Innovative projects</li>
+              <li><i class="fas fa-check"></i>Problem specific </li>
+            </ul>
+            <button class="btn btn-primary">Learn More</button>
+            
           </div>
         </div>
       </section>
@@ -541,6 +549,36 @@
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
 
+      .btn-primary {
+        background: transparent;
+        color: var(--deep-purple);
+        border: 2px solid var(--deep-purple);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .btn-primary:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: var(--deep-purple);
+        transition: all 0.3s ease;
+        z-index: -1;
+    }
+
+    .btn-primary:hover {
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    .btn-primary:hover:before {
+        width: 100%;
+    }
     </style>
 
 
