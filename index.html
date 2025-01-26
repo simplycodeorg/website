@@ -89,51 +89,34 @@
             <div class="bg-circle circle-5"></div>
         </section>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const text = "Breaking down barriers in tech education";
-                const typingText = document.getElementById('typing-text');
-                let i = 0;
-
-                function typeWriter() {
-                    if (i < text.length) {
-                        typingText.innerHTML += text.charAt(i);
-                        i++;
-                        setTimeout(typeWriter, 100);
-                    }
-                }
-
-                setTimeout(typeWriter, 500);
-            });
-        </script>
-
 <div class="container">
     <section id="mission" class="reveal">
       <div class="container">
           <div class="mission-content">
               <div class="mission-text">
                   <h2>Our Mission</h2>
-                  <p class="mission-main">To empower students through accessible technology education and create pathways for the next generation of innovators.</p>
+                  <p class="mission-main">Make technology simpler to be fun, fair, and for everyone.</p>
                   <div class="mission-points">
                       <div class="mission-point">
                           <i class="fas fa-graduation-cap"></i>
                           <div>
-                              <h3>Education First</h3>
-                              <p>Making quality tech education accessible to all students regardless of background.</p>
+                              <h3>Fun</h3>
+                              <p>Creating interactive showcases and products to demonstrate the power of technology for students.</p>
                           </div>
                       </div>
                       <div class="mission-point">
                           <i class="fas fa-hands-helping"></i>
                           <div>
-                              <h3>Community Driven</h3>
-                              <p>Building a supportive community where students can learn, grow, and collaborate.</p>
+                              <h3>Fair</h3>
+                              <p>Preparing students with the skills and knowledge needed to use technology for good.</p>
                           </div>
                       </div>
                       <div class="mission-point">
                           <i class="fas fa-rocket"></i>
                           <div>
-                              <h3>Future Ready</h3>
-                              <p>Preparing students with the skills and knowledge needed for the digital future.</p>
+                              <h3>For Everyone</h3>
+                              <p>Building a supportive community where every student regardless of background can learn, grow, and collaborate.
+                            </p>
                           </div>
                       </div>
                   </div>
@@ -142,101 +125,82 @@
       </div>
   </section>
 
-  
+    <section id="opportunities" class="reveal">
         <div class="container">
-            <section id="impact-numbers">
-                <div class="container">
-                    <div class="impact-row">
-                        <div class="impact-stat">
-                            <h3>80+</h3>
-                            <p>Students Reached</p>
-                        </div>
-                        <div class="impact-divider"></div>
-                        <div class="impact-stat">
-                            <h3>2+</h3>
-                            <p>Workshops Conducted</p>
-                        </div>
-                        <div class="impact-divider"></div>
-                        <div class="impact-stat">
-                            <h3>5+</h3>
-                            <p>Partners</p>
-                        </div>
-                        <div class="impact-divider"></div>
-                        <div class="impact-stat">
-                            <h3>25+</h3>
-                            <p>Members</p>
-                        </div>
-                    </div>
+            <div class="section-header">
+                <h2>Our Offerings</h2>
+            </div>
+            <div class="opportunities-grid">
+                <div class="opp-card">
+                    <h3>Courses</h3>
+                    <p>Perfect for beginners. Access our courses from Web Development to AI.</p>
+                    <button class="btn">Start Learning</button>
                 </div>
-            </section>
-
-            <section id="upcoming-events">
-                <h2>Upcoming Events</h2>
-                <div class="events-grid">
-                  <div class="event-card">
-                    <div class="event-date">
-                      <span class="month">MAR</span>
-                      <span class="day">15</span>
-                    </div>
-                    <div class="event-details">
-                      <h3>Intro to Web Development</h3>
-                      <p><i class="fas fa-clock"></i> 4:00 PM - 6:00 PM PST</p>
-                      <p><i class="fas fa-map-marker-alt"></i> Online (Zoom)</p>
-                      <p>Build your first website using HTML, CSS, and JavaScript</p>
-                      <button class="btn">Register Now</button>
-                    </div>
-                  </div>
-        
-                  <div class="event-card">
-                    <div class="event-date">
-                      <span class="month">APR</span>
-                      <span class="day">01</span>
-                    </div>
-                    <div class="event-details">
-                      <h3>Python Game Development</h3>
-                      <p><i class="fas fa-clock"></i> 3:00 PM - 5:00 PM PST</p>
-                      <p><i class="fas fa-map-marker-alt"></i> Online (Zoom)</p>
-                      <p>Create your own game while learning Python programming</p>
-                      <button class="btn">Register Now</button>
-                    </div>
-                  </div>
+                <div class="opp-card">
+                    <h3>Workshops</h3>
+                    <p>Taught directly by us. Learn to create and scale hands-on projects. </p>
+                    <button class="btn">Start Building</button>
                 </div>
-              </section>
-            
-    
-            </section>
+                <div class="opp-card">
+                    <h3>Mentorship</h3>
+                    <p>We will mentor you to lead your own initiative with technology and advocacy.</p>
 
-          
-
+                    
+                    <button class="btn">Join Community</button>
+                </div>
+            </div>
         </div>
+    </section>
+    <section id="impact-numbers">
+        <div class="container">
+            <div class="impact-row">
+                <div class="impact-stat">
+                    <h3>80+</h3>
+                    <p>Students Reached</p>
+                </div>
+                <div class="impact-divider"></div>
+                <div class="impact-stat">
+                    <h3>2+</</h3>
+                    <p>Workshops</p>
+                </div>
+                <div class="impact-divider"></div>
+                <div class="impact-stat">
+                    <h3>25+</</h3>
+                    <p>Members</p>
+                </div>
+                <div class="impact-divider"></div>
+                <div class="impact-stat">
+                    <h3>$650+</h3>
+                    <p>Raised</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container" name="partners">
+        <section id="partners" class="gradient-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Partners</h2>
+                    <!-- <p class="section-subtitle">Working together to empower the next generation</p> -->
+                </div>
+                <div class="logo-scroll" style="margin-top: 0; padding-top: 0;"></div>
+                    <div class="logo-container">
+                        <img src="/partners/civics.jpg" alt="Civics Club">
+                        <img src="/partners/download.png" alt="National Contribution Project">
+                        <img src="/partners/foodsociety.webp" alt="Food Society">
 
-   
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const menuBtn = document.querySelector('.mobile-menu-btn');
-                const navLinks = document.querySelector('.nav-links');
-                const body = document.body;
+                        <img src="/partners/hackclub.png" alt="Hack Club">
+                    </div>
+                </div>
+            </div>
+        </section>
+     
 
-                menuBtn.addEventListener('click', function() {
-                    this.classList.toggle('active');
-                    navLinks.classList.toggle('active');
-                    body.classList.toggle('menu-open');
-                });
+        </section>
 
-                // Close menu when clicking a link
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        menuBtn.classList.remove('active');
-                        navLinks.classList.remove('active');
-                        body.classList.remove('menu-open');
-                    });
-                });
-            });
-        </script>
+      
 
-       
     </div>
-
 
 
 
@@ -301,6 +265,43 @@
 </html>
 
 <style>
+     #partners .logo-container {
+        display: flex;
+        justify-content: center;
+        gap: 4rem;
+        margin-top: 0.5rem;  /* Reduced from 1rem */
+    }
+
+    #partners img {
+        height: 80px;  /* Increased from 60px */
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+    }
+
+    #partners img:hover {
+        opacity: 1;
+    }
+       /* Keep responsive adjustments */
+       @media (max-width: 768px) {
+        .hero-content h1 {
+            font-size: 3.5rem;
+        }
+        .hero-content p {
+            font-size: 1.1rem;
+        }
+        
+        #partners img {
+            height: 60px;  /* Smaller on mobile */
+        }
+    }
+
+    /* Reduce space between subtitle and partner logos */
+    #partners .logo-container {
+        display: flex;
+        justify-content: center;
+        gap: 4rem;
+        margin-top: 1rem;  /* Reduced from 2rem */
+    }
     /* Remove underlines from all section headers */
     section h2::after,
     .section-title::after,
@@ -546,7 +547,7 @@
         display: flex;
         justify-content: center;
         gap: 4rem;
-        margin-top: 1rem;
+        margin-top: 0.5rem;  /* Reduced from 1rem */
     }
 
     #partners img {
@@ -644,10 +645,10 @@
         transition: all 0.3s ease;
     }
 
-    .hero-content h1:hover {
-        background-position: 0%;
+    /* .hero-content h1:hover {
+        /* background-position: 0%; */
         transform: scale(1.02);
-    }
+    } */
 
     /* Keep responsive adjustments */
     @media (max-width: 768px) {
