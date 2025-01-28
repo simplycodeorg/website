@@ -100,6 +100,9 @@
         </div>
 
         <!-- Chapters Section - Location Cards -->
+       <!---
+       
+       
         <div class="section-split chapters">
             <div class="container">
                 <div class="chapters-header">
@@ -111,7 +114,6 @@
                 </div>
                 
                 <div class="chapter-cards">
-                    <!-- Philadelphia Chapter -->
                     <div class="chapter-card">
                         <div class="chapter-info">
                             <h3>Philadelphia</h3>
@@ -125,7 +127,6 @@
                         <a href="#" class="btn btn-primary">Join Chapter</a>
                     </div>
 
-                    <!-- Atlanta Chapter -->
                     <div class="chapter-card">
                         <div class="chapter-info">
                             <h3>Atlanta</h3>
@@ -139,7 +140,6 @@
                         <a href="#" class="btn btn-primary">Join Chapter</a>
                     </div>
 
-                    <!-- California Chapter -->
                     <div class="chapter-card">
                         <div class="chapter-info">
                             <h3>San Francisco</h3>
@@ -155,6 +155,8 @@
                 </div>
             </div>
         </div>
+    
+    -->
 
         <!-- Mentorship Section - Minimal Style -->
         <div class="section-minimal mentorship">
@@ -228,6 +230,41 @@
             <p>&copy; 2025 Simply Code. All rights reserved.</p>
         </div>
     </footer>
+    <div id="comingSoonModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Coming Soon!</h2>
+            <p>This feature is currently under development. Stay tuned!</p>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        const modal = document.getElementById('comingSoonModal');
+        const closeBtn = document.getElementsByClassName('close')[0];
+        const allButtons = document.querySelectorAll('.btn');
+
+        // Add click handler to all buttons
+        allButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.style.display = 'block';
+            });
+        });
+
+        // Close modal when clicking (x)
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+
     <style>
 
 
@@ -728,7 +765,81 @@
         margin: 2rem auto 0;
         display: block;
     }
-    </style>
+
+    /* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .modal-content {
+        background: white;
+        margin: 15% auto;
+        padding: 2rem;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 500px;
+        position: relative;
+        animation: slideIn 0.3s ease-out;
+    }
+
+    .close {
+        position: absolute;
+        right: 1.5rem;
+        top: 1rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #666;
+    }
+
+    .close:hover {
+        color: var(--deep-purple);
+    }
+
+    .modal h2 {
+        color: var(--deep-purple);
+        margin-bottom: 1rem;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateY(-100px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* Add these specific styles for the workshops button */
+    .workshops .btn-light {
+        background: white;
+        color: var(--deep-purple);
+        border: 2px solid white;
+    }
+
+    .workshops .btn-light:hover {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    }
+    
+</style>
     
 </body>
-</html> 
+</html>

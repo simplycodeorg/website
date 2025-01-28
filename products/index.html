@@ -86,7 +86,7 @@
               <li><i class="fas fa-check"></i> Technology history</li>
               <li><i class="fas fa-check"></i> Interactive features</li>
             </ul>
-            <button class="btn btn-primary btn-container">View Gallery</button>
+            <button class="btn btn-primary btn-container" data-product="gallery">View Gallery</button>
             <!-- <button class="btn btn-primary">Submit Yours</button> -->
       
           </div>
@@ -102,7 +102,7 @@
               <li><i class="fas fa-check"></i> Hands on projects</li>
               <li><i class="fas fa-check"></i> Personalized for you</li>
             </ul>
-            <button class="btn btn-primary">Explore Courses</button>
+            <button class="btn btn-primary" data-product="courses">Explore Courses</button>
             
           </div>
 
@@ -117,13 +117,20 @@
               <li><i class="fas fa-check"></i>Innovative projects</li>
               <li><i class="fas fa-check"></i>Problem specific </li>
             </ul>
-            <button class="btn btn-primary">Learn More</button>
+            <button class="btn btn-primary" data-product="showcase">Learn More</button>
             
           </div>
         </div>
       </section>
+    </div>
 
-     
+    <!-- Add this before the footer -->
+    <div id="productModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Coming Soon!</h2>
+        <p>This product is still in development. Check back later!</p>
+      </div>
     </div>
 
     <footer>
@@ -579,6 +586,55 @@
     .btn-primary:hover:before {
         width: 100%;
     }
+
+    /* Add this to your existing styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 15% auto;
+      padding: 2rem;
+      border-radius: 15px;
+      width: 80%;
+      max-width: 500px;
+      position: relative;
+      animation: modalSlideIn 0.3s ease-out;
+    }
+
+    .close-modal {
+      position: absolute;
+      right: 1.5rem;
+      top: 1rem;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #666;
+      transition: color 0.3s ease;
+    }
+
+    .close-modal:hover {
+      color: #333;
+    }
+
+    @keyframes modalSlideIn {
+      from {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
     </style>
 
 
@@ -600,6 +656,32 @@
 
       window.addEventListener("scroll", reveal);
       reveal(); // Initial check
+
+      // Add this after your existing scripts
+      document.addEventListener("DOMContentLoaded", function() {
+        const modal = document.getElementById("productModal");
+        const closeBtn = document.querySelector(".close-modal");
+        const productButtons = document.querySelectorAll("[data-product]");
+
+        productButtons.forEach(button => {
+          button.addEventListener("click", () => {
+            modal.style.display = "block";
+            document.body.style.overflow = "hidden";
+          });
+        });
+
+        closeBtn.addEventListener("click", () => {
+          modal.style.display = "none";
+          document.body.style.overflow = "auto";
+        });
+
+        window.addEventListener("click", (e) => {
+          if (e.target === modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+          }
+        });
+      });
     </script>
   </body>
 </html>
