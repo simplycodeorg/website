@@ -1704,6 +1704,19 @@ section h2 {
     display: inline-block;
 }
 
+/* Button Styles */
+.hero-btn {
+    background: var(--light-purple);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
 .btn:hover {
     background: var(--deep-purple);
 }
