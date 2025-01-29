@@ -124,14 +124,15 @@
       </section>
     </div>
 
-    <!-- Add this before the footer -->
-    <div id="productModal" class="modal">
+
+
+    <div id="comingSoonModal" class="modal">
       <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <h2>Coming Soon!</h2>
-        <p>This product is still in development. Check back later!</p>
+          <span class="close">&times;</span>
+          <h2>Coming Soon!</h2>
+          <p>This feature is currently under development. Stay tuned!</p>
       </div>
-    </div>
+  </div>
 
     <footer>
         <div class="footer-content">
@@ -587,55 +588,66 @@
         width: 100%;
     }
 
-    /* Add this to your existing styles */
+
+    /* Modal Styles */
     .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(5px);
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        animation: fadeIn 0.3s ease-in-out;
     }
 
     .modal-content {
-      background-color: white;
-      margin: 15% auto;
-      padding: 2rem;
-      border-radius: 15px;
-      width: 80%;
-      max-width: 500px;
-      position: relative;
-      animation: modalSlideIn 0.3s ease-out;
+        background: white;
+        margin: 15% auto;
+        padding: 2rem;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 500px;
+        position: relative;
+        animation: slideIn 0.3s ease-out;
     }
 
-    .close-modal {
-      position: absolute;
-      right: 1.5rem;
-      top: 1rem;
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: #666;
-      transition: color 0.3s ease;
+    .close {
+        position: absolute;
+        right: 1.5rem;
+        top: 1rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #666;
     }
 
-    .close-modal:hover {
-      color: #333;
+    .close:hover {
+        color: var(--deep-purple);
     }
 
-    @keyframes modalSlideIn {
-      from {
-        transform: translateY(-100px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
+    .modal h2 {
+        color: var(--deep-purple);
+        margin-bottom: 1rem;
     }
-    </style>
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateY(-100px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+</style>
 
 
     <script>
@@ -658,30 +670,34 @@
       reveal(); // Initial check
 
       // Add this after your existing scripts
-      document.addEventListener("DOMContentLoaded", function() {
-        const modal = document.getElementById("productModal");
-        const closeBtn = document.querySelector(".close-modal");
-        const productButtons = document.querySelectorAll("[data-product]");
-
-        productButtons.forEach(button => {
-          button.addEventListener("click", () => {
-            modal.style.display = "block";
-            document.body.style.overflow = "hidden";
-          });
-        });
-
-        closeBtn.addEventListener("click", () => {
-          modal.style.display = "none";
-          document.body.style.overflow = "auto";
-        });
-
-        window.addEventListener("click", (e) => {
-          if (e.target === modal) {
-            modal.style.display = "none";
-            document.body.style.overflow = "auto";
-          }
-        });
-      });
+    
     </script>
+         <script>
+          // Modal functionality
+          const modal = document.getElementById('comingSoonModal');
+          const closeBtn = document.getElementsByClassName('close')[0];
+          const allButtons = document.querySelectorAll('.btn');
+  
+          // Add click handler to all buttons
+          allButtons.forEach(button => {
+              button.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  modal.style.display = 'block';
+              });
+          });
+  
+          // Close modal when clicking (x)
+          closeBtn.addEventListener('click', function() {
+              modal.style.display = 'none';
+          });
+  
+          // Close modal when clicking outside
+          window.addEventListener('click', function(event) {
+              if (event.target === modal) {
+                  modal.style.display = 'none';
+              }
+          });
+      </script>
+
   </body>
 </html>
