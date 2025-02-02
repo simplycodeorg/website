@@ -115,7 +115,7 @@
 
       .options-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 2rem;
         max-width: 1200px;
         width: 100%;
@@ -240,6 +240,11 @@
         color: var(--gray-text);
         line-height: 1.5;
       }
+
+      .option-button:not(a) {
+        opacity: 0.9;
+        cursor: default;
+      }
     </style>
   </head>
   <body>
@@ -297,16 +302,27 @@
           <span class="option-title">Join Our Team</span>
           <span class="option-description"
             >Become part of our dynamic team and help shape the future of tech
-            education. Perfect for students looking to make an impact.</span
+            education.</span
           >
         </a>
-        <a href="#" class="option-button">
+        <div class="option-button">
           <span class="option-title">Become a Partner</span>
           <span class="option-description"
-            >Partner with us to expand our reach and create meaningful
-            opportunities for students in tech education.</span
+            >Partner with us to expand our reach. Coming soon!</span
           >
-        </a>
+        </div>
+        <div class="option-button">
+          <span class="option-title">Feature Us</span>
+          <span class="option-description"
+            >Interested in featuring Simply Code? Stay tuned!</span
+          >
+        </div>
+        <div class="option-button">
+          <span class="option-title">Start Your Chapter</span>
+          <span class="option-description"
+            >Launch Simply Code in your community. Coming soon!</span
+          >
+        </div>
       </div>
     </div>
 

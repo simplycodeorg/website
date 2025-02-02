@@ -51,128 +51,93 @@
     </section>
 
     <section class="events-section">
-        <!-- Conferences Section First -->
-        <div class="section-card conferences">
-            <div class="container">
-                <div class="card-content">
-                    <div class="card-body">
-                        <div class="mission-text">
-
-                        <h2>Conferences</h2>
-                        </div>
-                        <div class="card-text">
-                            <span class="subtitle">Connect & Network</span>
-                            <p class="description">Join our tech conferences to hear from leading experts, network with peers, and stay updated with the latest in technology.</p>
-                            <div class="conference-features">
-                                <div class="feature">
-                                    <strong>Expert Speakers</strong>
-                                    <p>Learn from industry leaders and innovators</p>
-                                </div>
-                                <div class="feature">
-                                    <strong>Networking</strong>
-                                    <p>Connect with peers and build relationships</p>
-                                </div>
-                                <div class="feature">
-                                    <strong>Workshops</strong>
-                                    <p>Hands-on sessions with practical learning</p>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-primary">View Conferences</a>
-                    </div>
+    <div class="container">
+        <div class="events-grid">
+            <div class="event-block">
+                <div class="event-icon">
+                    <i class="fas fa-microphone-alt"></i>
                 </div>
+                <h2>Conferences</h2>
+                <p>Join our tech conferences to learn from experts and network with peers.</p>
+                <ul class="event-features">
+                    <li>Expert Speakers</li>
+                    <li>Networking Sessions</li>
+                    <li>Live Demonstrations</li>
+                </ul>
+                <a href="#" class="btn btn-primary">View Events</a>
+            </div>
+
+            <div class="event-block">
+                <div class="event-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h2>Workshops</h2>
+                <p>Hands-on learning sessions led by industry professionals.</p>
+                <ul class="event-features">
+                    <li>Interactive Learning</li>
+                    <li>Project Building</li>
+                    <li>Technical Skills</li>
+                </ul>
+                <a href="#" class="btn btn-primary">Join Workshop</a>
+            </div>
+
+            <div class="event-block">
+                <div class="event-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h2>Mentorship</h2>
+                <p>Get personalized guidance from experienced developers.</p>
+                <ul class="event-features">
+                    <li>1-on-1 Sessions</li>
+                    <li>Career Guidance</li>
+                    <li>Project Support</li>
+                </ul>
+                <a href="#" class="btn btn-primary">Learn More</a>
             </div>
         </div>
+    </div>
+</section>
 
-        <!-- Workshops Section Second -->
-        <div class="section-row workshops">
-            <div class="container">
-                <div class="row-content">
-                    <div class="content-left">
-                        <h2>Workshops</h2>
-                    </div>
-                    <div class="content-right">
-                        <p class="description" style="color: white;">Join our hands-on workshops led by industry experts. Perfect for learning new skills and getting practical experience.</p>
-                        <a href="#" class="btn btn-light">Explore Workshops</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+<style>
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 4rem 0;
+}
 
-        <!-- Chapters Section - Location Cards -->
-       <!---
-       
-       
-        <div class="section-split chapters">
-            <div class="container">
-                <div class="chapters-header">
-                    <div class="mission-text">
+.event-block {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
 
-                    <h2>Chapters</h2>
-                    </div>
-                    <p class="description">Find your local Simply Code chapter or start one in your area. Build connections and grow together.</p>
-                </div>
-                
-                <div class="chapter-cards">
-                    <div class="chapter-card">
-                        <div class="chapter-info">
-                            <h3>Philadelphia</h3>
-                            <p class="location">Pennsylvania</p>
-                            <div class="chapter-stats">
-                                <span>200+ Members</span>
-                                <span>Weekly Meetups</span>
-                            </div>
-                            <p class="chapter-desc">Join our thriving tech community in the heart of Philadelphia. Regular meetups at local tech hubs and universities.</p>
-                        </div>
-                        <a href="#" class="btn btn-primary">Join Chapter</a>
-                    </div>
+.event-block:hover {
+    transform: translateY(-5px);
+}
 
-                    <div class="chapter-card">
-                        <div class="chapter-info">
-                            <h3>Atlanta</h3>
-                            <p class="location">Georgia</p>
-                            <div class="chapter-stats">
-                                <span>150+ Members</span>
-                                <span>Bi-weekly Events</span>
-                            </div>
-                            <p class="chapter-desc">Connect with Atlanta's diverse tech scene. Regular events focusing on web development and emerging technologies.</p>
-                        </div>
-                        <a href="#" class="btn btn-primary">Join Chapter</a>
-                    </div>
+.event-icon {
+    font-size: 2rem;
+    color: var(--deep-purple);
+    margin-bottom: 1.5rem;
+}
 
-                    <div class="chapter-card">
-                        <div class="chapter-info">
-                            <h3>San Francisco</h3>
-                            <p class="location">California</p>
-                            <div class="chapter-stats">
-                                <span>300+ Members</span>
-                                <span>Weekly Workshops</span>
-                            </div>
-                            <p class="chapter-desc">Be part of Silicon Valley's innovative community. Regular sessions with industry leaders and hands-on workshops.</p>
-                        </div>
-                        <a href="#" class="btn btn-primary">Join Chapter</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    -->
+.event-features {
+    list-style: none;
+    padding: 1.5rem 0;
+    margin: 1.5rem 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
 
-        <!-- Mentorship Section - Minimal Style -->
-        <div class="section-minimal mentorship">
-            <div class="container">
-                <div class="minimal-content">
-                    <div class="mission-text">
-
-                    <h2>Mentorship</h2>
-                    </div>
-                    <div class="minimal-body">
-                        <p class="description">Get personalized guidance from experienced developers. Our mentorship program helps you achieve your coding goals faster.</p>
-                        <a href="#" class="btn btn-primary">Start Mentorship</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+.event-features li {
+    margin: 0.5rem 0;
+    color: #666;
+}
+</style>
     </section>
 
     <footer>
@@ -843,4 +808,3 @@
     
 </body>
 </html>
-    
