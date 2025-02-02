@@ -228,6 +228,27 @@
                 modal.style.display = 'none';
             }
         });
+
+        // Mobile menu functionality
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.querySelector(".mobile-menu-btn");
+            const navLinks = document.querySelector(".nav-links");
+            const body = document.body;
+
+            menuBtn.addEventListener("click", function () {
+                this.classList.toggle("active");
+                navLinks.classList.toggle("active");
+                body.classList.toggle("menu-open");
+            });
+
+            document.querySelectorAll(".nav-links a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    menuBtn.classList.remove("active");
+                    navLinks.classList.remove("active");
+                    body.classList.remove("menu-open");
+                });
+            });
+        });
     </script>
 
     <style>
