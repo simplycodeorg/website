@@ -86,7 +86,7 @@
               <li><i class="fas fa-check"></i> Technology history</li>
               <li><i class="fas fa-check"></i> Interactive features</li>
             </ul>
-            <button class="btn btn-primary btn-container" data-product="gallery">View Gallery</button>
+            <button class="btn btn-primary text-center" data-product="gallery">View Gallery</button>
             <!-- <button class="btn btn-primary">Submit Yours</button> -->
       
           </div>
@@ -565,6 +565,9 @@
         position: relative;
         overflow: hidden;
         z-index: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .btn-primary:before {
@@ -588,6 +591,17 @@
         width: 100%;
     }
 
+    .text-center {
+        text-align: center;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
 
     /* Modal Styles */
     .modal {
