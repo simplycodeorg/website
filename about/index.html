@@ -52,6 +52,42 @@
     </section>
 
     <section class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="mission-text">
+                    <h2>Board Members</h2>
+                </div>
+            </div>
+            <div class="board-grid">
+                <div class="team-member">
+                    <img src="../teamPictures/jeff.avif" alt="Jeff">
+                    <h3>Jeff</h3>
+                    <p>Chairman</p>
+                    <div class="social-links">
+                        <a href="mailto:jeff@wesimplycode.org" target="_blank" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jefflin07/" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="../teamPictures/fnu.avif" alt="Fnu">
+                    <h3>Fnu</h3>
+                    <p>Chair of Operations</p>
+                    <div class="social-links">
+                        <a href="mailto:fnu@wesimplycode.org" target="_blank" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/fnu-mohammad-omar-7ab976340/" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Founders Group -->
         <div class="container">
             <div class="section-header">
@@ -62,19 +98,6 @@
                 </div>
             </div>
             <div class="team-grid">
-                <div class="team-member">
-                    <img src="../teamPictures/jeff.avif" alt="Jeff">
-                    <h3>Jeff</h3>
-                    <p>Chief Executive Officer</p>
-                    <div class="social-links">
-                        <a href="mailto:jeff@wesimplycode.org" target="_blank" title="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/jefflin07/" target="_blank" title="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </div>
-                </div>
                 <div class="team-member">
                     <img src="/teamPictures/misha.jpeg" alt="" style="background-color:var(--accent-purple);">
                     <h3>Misha</h3>
@@ -88,20 +111,6 @@
                         </a> -->
                     </div>
                 </div>
-                <div class="team-member">
-                    <img src="../teamPictures/fnu.avif" alt="Fnu">
-                    <h3>Fnu</h3>
-                    <p>Chief Marketing Officer</p>
-                    <div class="social-links">
-                        <a href="mailto:fnu@wesimplycode.org" target="_blank" title="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/fnu-mohammad-omar-7ab976340/" target="_blank" title="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </div>
-                </div>
-
                 <div class="team-member">
                     <img src="../teamPictures/anushka.avif" alt="Anushka">
                     <h3>Anushka</h3>
@@ -190,9 +199,7 @@
                         <a href="mailto:kaavya@wesimplycode.org" target="_blank" title="Email">
                             <i class="fas fa-envelope"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/kaavyaimmandi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" title="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
+                       
                     </div>
                 </div>
                 <div class="team-member">
@@ -203,7 +210,9 @@
                         <a href="mailto:kanishkaa@wesimplycode.org" target="_blank" title="Email">
                             <i class="fas fa-envelope"></i>
                         </a>
-                        
+                        <a href="https://www.linkedin.com/in/kanishkaaseerangan/" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -581,5 +590,22 @@
         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         border-radius: 12px;
         padding: 3rem 2rem;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .board-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(250px, 1fr)); /* Force 2 columns */
+        gap: 2rem;
+        margin-bottom: 4rem;
+        max-width: 800px; /* Limit width */
+        margin-left: auto;
+        margin-right: auto;
     }
 </style>
