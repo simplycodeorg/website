@@ -115,12 +115,19 @@
 
       .options-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
         max-width: 1200px;
         width: 100%;
         margin: 0 auto;
       }
+
+      @media (max-width: 768px) {
+        .options-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
       /* Update footer developer signature */
       .footer-bottom {
         text-align: center;
@@ -269,7 +276,7 @@
           <li><a href="/events">Events</a></li>
           <li><a href="/products">Products</a></li>
           <li><a href="/join" class="active">Join Us</a></li>
-          <li><a href="/donate" class="active btn-nav">Donate</a></li>
+          <li><a href="https://hcb.hackclub.com/donations/start/simply-code" class="active btn-nav">Donate</a></li>
         </ul>
       </div>
     </nav>
@@ -309,18 +316,6 @@
           <span class="option-title">Become a Partner</span>
           <span class="option-description"
             >Partner with us to expand our reach. Coming soon!</span
-          >
-        </div>
-        <div class="option-button">
-          <span class="option-title">Feature Us</span>
-          <span class="option-description"
-            >Interested in featuring Simply Code? Stay tuned!</span
-          >
-        </div>
-        <div class="option-button">
-          <span class="option-title">Start Your Chapter</span>
-          <span class="option-description"
-            >Launch Simply Code in your community. Coming soon!</span
           >
         </div>
       </div>
@@ -397,11 +392,12 @@
         <div class="footer-section">
           <h3>Newsletter</h3>
           <p>Stay updated with our latest news and events.</p>
-          <form class="newsletter-form">
-            <input type="email" placeholder="Enter your email" required />
-            <button type="submit">Subscribe</button>
-          </form>
-        </div>
+          <a href="https://cdn.forms-content-1.sg-form.com/0da89345-f329-11ef-9b9f-9664681eba1a" 
+             class="newsletter-btn" 
+             target="_blank">
+              Subscribe to Newsletter
+          </a>
+      </div>
       </div>
 
       <div class="footer-bottom">

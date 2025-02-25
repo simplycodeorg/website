@@ -246,7 +246,7 @@
                     <li><a href="/about">About Us</a></li>
                     <li><a href="/events">Events</a></li>
                     <li><a href="/join">Join Us</a></li>
-                    <li><a href="/donate">Donate</a></li>
+                    <li><a href="https://hcb.hackclub.com/donations/start/simply-code">Donate</a></li>
                 </ul>
             </div>
             
@@ -260,10 +260,11 @@
             <div class="footer-section">
                 <h3>Newsletter</h3>
                 <p>Stay updated with our latest news and events.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
+                <a href="https://cdn.forms-content-1.sg-form.com/0da89345-f329-11ef-9b9f-9664681eba1a" 
+                   class="newsletter-btn" 
+                   target="_blank">
+                    Subscribe to Newsletter
+                </a>
             </div>
         </div>
         
@@ -934,4 +935,21 @@
         margin-bottom: 25px; /* Increased space above button */
     }
 
+    .newsletter-btn {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        background: var(--deep-purple);
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        margin-top: 1rem;
+    }
+
+    .newsletter-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(93, 94, 212, 0.2);
+        background: var(--light-purple);
+    }
 </style>
