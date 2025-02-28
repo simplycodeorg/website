@@ -102,7 +102,7 @@
               <li><i class="fas fa-check"></i> Hands on projects</li>
               <li><i class="fas fa-check"></i> Personalized for you</li>
             </ul>
-            <button class="btn btn-primary" data-product="courses">Explore Courses</button>
+            <a href="/products/courses" class="btn btn-primary">Explore Courses</a>
             
           </div>
 
@@ -692,21 +692,23 @@
           // Modal functionality
           const modal = document.getElementById('comingSoonModal');
           const closeBtn = document.getElementsByClassName('close')[0];
-          const allButtons = document.querySelectorAll('.btn');
-  
-          // Add click handler to all buttons
+          const allButtons = document.querySelectorAll('.btn:not([href="/products/courses"])');
+
+          // Add click handler to all buttons except courses button
           allButtons.forEach(button => {
               button.addEventListener('click', function(e) {
-                  e.preventDefault();
-                  modal.style.display = 'block';
+                  if (!button.closest('a[href="/products/courses"]')) {
+                      e.preventDefault();
+                      modal.style.display = 'block';
+                  }
               });
           });
-  
+
           // Close modal when clicking (x)
           closeBtn.addEventListener('click', function() {
               modal.style.display = 'none';
           });
-  
+
           // Close modal when clicking outside
           window.addEventListener('click', function(event) {
               if (event.target === modal) {
