@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <!-- Standard Navigation -->
     <nav>
         <div class="nav-content">
             <div class="nav-top">
@@ -30,12 +29,7 @@
         </div>
     </nav>
 
-    <!-- Update the course header section with the correct gradient background -->
-    <section class="course-header" style="background: linear-gradient(135deg, 
-        #9d7af3 0%,    /* Lighter purple */
-        #7046d3 50%,   /* Medium purple */
-        #4b23b7 100%   /* Deeper purple */
-    );">
+    <header class="course-header">
         <div class="container">
             <div class="course-intro">
                 <div class="course-icon">
@@ -43,121 +37,221 @@
                 </div>
                 <h1>Python Programming</h1>
                 <p>Master Python fundamentals through hands-on projects</p>
-                
-                <div class="course-meta">
-                    <div class="meta-item">
-                        <i class="fas fa-user-graduate"></i>
-                        <span>Beginner Friendly</span>
-                    </div>
-                    <div class="meta-item">
-                        <i class="fas fa-clock"></i>
-                        <span>20 Hours</span>
-                    </div>
-                    <div class="meta-item">
-                        <i class="fas fa-laptop-code"></i>
-                        <span>10 Projects</span>
-                    </div>
-                </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Course Content -->
     <section class="course-content">
         <div class="container">
             <div class="module-navigation">
                 <h2>Course Modules</h2>
                 <ul class="module-list">
-                    <li class="module-item active">
-                        <a href="#module1">
-                            <span class="module-number">01</span>
-                            <span class="module-title">Getting Started</span>
-                            <span class="module-lessons">3 lessons</span>
-                        </a>
+                    <li class="module-item active" data-target="module1">
+                        <span class="module-number">01</span>
+                        <span class="module-title">Syntax & Comments</span>
+                        <span class="module-lessons">2 lessons</span>
                     </li>
-                    <li class="module-item">
-                        <a href="#module2">
-                            <span class="module-number">02</span>
-                            <span class="module-title">Python Basics</span>
-                            <span class="module-lessons">4 lessons</span>
-                        </a>
+                    <li class="module-item" data-target="module2">
+                        <span class="module-number">02</span>
+                        <span class="module-title">Data Types</span>
+                        <span class="module-lessons">2 lessons</span>
                     </li>
-                    <li class="module-item">
-                        <a href="#module3">
-                            <span class="module-number">03</span>
-                            <span class="module-title">Control Flow</span>
-                            <span class="module-lessons">3 lessons</span>
-                        </a>
+                    <li class="module-item" data-target="module3">
+                        <span class="module-number">03</span>
+                        <span class="module-title">Loops</span>
+                        <span class="module-lessons">3 lessons</span>
+                    </li>
+                    <li class="module-item" data-target="module4">
+                        <span class="module-number">04</span>
+                        <span class="module-title">Arrays & Lists</span>
+                        <span class="module-lessons">3 lessons</span>
                     </li>
                 </ul>
             </div>
 
-            <div class="module-content" id="module1">
+            <!-- Module 1: Syntax & Comments -->
+            <div class="module-content active" id="module1">
                 <div class="module-header">
-                    <h2>Module 1: Getting Started</h2>
-                    <p>Learn the basics of Python and set up your development environment</p>
+                    <h2>Module 1: Syntax & Comments</h2>
+                    <p>Learn the fundamentals of Python syntax and how to write clean, documented code</p>
                 </div>
 
                 <div class="lessons">
                     <div class="lesson">
                         <div class="lesson-icon"><i class="fas fa-play-circle"></i></div>
                         <div class="lesson-content">
-                            <h3>Introduction to Python</h3>
-                            <p>Learn what Python is and why it's a great programming language for beginners</p>
-                            <span class="duration">15 min</span>
-                        </div>
-                        <a href="https://www.youtube.com/watch?v=x7X9w_GIm1s" class="lesson-btn" target="_blank">Watch</a>
-                    </div>
-
-                    <div class="lesson">
-                        <div class="lesson-icon"><i class="fas fa-play-circle"></i></div>
-                        <div class="lesson-content">
-                            <h3>Setting Up Your Environment</h3>
-                            <p>Install Python and set up a code editor for your development environment</p>
+                            <h3>Python Syntax Fundamentals</h3>
+                            <p>Understanding Python's structure, indentation, and basic syntax rules</p>
                             <span class="duration">20 min</span>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=YYXdXT2l-Gg" class="lesson-btn" target="_blank">Watch</a>
+                        <a href="https://youtu.be/kqtD5dpn9C8" class="lesson-btn" target="_blank">Watch</a>
                     </div>
 
                     <div class="lesson project">
                         <div class="lesson-icon"><i class="fas fa-laptop-code"></i></div>
                         <div class="lesson-content">
-                            <h3>Project: Hello World</h3>
-                            <p>Create your first Python program and learn about syntax basics</p>
+                            <h3>Project: "Hello World" With Comments</h3>
+                            <p>Create your first Python program with proper documentation and comments</p>
+                            <span class="duration">25 min</span>
+                        </div>
+                        <a href="https://youtu.be/7XOhibxgBlQ" class="lesson-btn" target="_blank">Start Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 2: Data Types -->
+            <div class="module-content" id="module2">
+                <div class="module-header">
+                    <h2>Module 2: Data Types</h2>
+                    <p>Explore various data types in Python and how to work with them effectively</p>
+                </div>
+
+                <div class="lessons">
+                    <div class="lesson">
+                        <div class="lesson-icon"><i class="fas fa-play-circle"></i></div>
+                        <div class="lesson-content">
+                            <h3>Python Data Types & Conversion</h3>
+                            <p>Learn about integers, floats, strings, booleans, and how to convert between types</p>
+                            <span class="duration">25 min</span>
+                        </div>
+                        <a href="https://youtu.be/gCCVsvgR2KU" class="lesson-btn" target="_blank">Watch</a>
+                    </div>
+
+                    <div class="lesson project">
+                        <div class="lesson-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="lesson-content">
+                            <h3>Project: String Concatenation Tool</h3>
+                            <p>Build a simple program that combines strings and different data types</p>
                             <span class="duration">30 min</span>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=kqtD5dpn9C8" class="lesson-btn" target="_blank">Start Project</a>
+                        <a href="https://youtu.be/nykOeWgQcHM" class="lesson-btn" target="_blank">Start Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 3: Loops -->
+            <div class="module-content" id="module3">
+                <div class="module-header">
+                    <h2>Module 3: Loops</h2>
+                    <p>Master the different types of loops in Python and when to use each one</p>
+                </div>
+
+                <div class="lessons">
+                    <div class="lesson">
+                        <div class="lesson-icon"><i class="fas fa-play-circle"></i></div>
+                        <div class="lesson-content">
+                            <h3>For Loops in Python</h3>
+                            <p>How to use for loops to iterate through sequences with examples</p>
+                            <span class="duration">20 min</span>
+                        </div>
+                        <a href="https://youtu.be/94UHCEmprCY" class="lesson-btn" target="_blank">Watch</a>
+                    </div>
+
+                    <div class="lesson">
+                        <div class="lesson-icon"><i class="fas fa-play-circle"></i></div>
+                        <div class="lesson-content">
+                            <h3>While Loops & Loop Comparison</h3>
+                            <p>Understanding while loops and when to choose them over for loops</p>
+                            <span class="duration">20 min</span>
+                        </div>
+                        <a href="https://youtu.be/D0Nb2Fs3Q8c" class="lesson-btn" target="_blank">Watch</a>
+                    </div>
+
+                    <div class="lesson project">
+                        <div class="lesson-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="lesson-content">
+                            <h3>Project: Number Guessing Game</h3>
+                            <p>Create an interactive number guessing game using loops and conditionals</p>
+                            <span class="duration">40 min</span>
+                        </div>
+                        <a href="https://youtu.be/tap0gNpxiPo" class="lesson-btn" target="_blank">Start Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 4: Arrays & Lists -->
+            <div class="module-content" id="module4">
+                <div class="module-header">
+                    <h2>Module 4: Arrays & Lists</h2>
+                    <p>Learn to work with collections of data in Python using lists and array-like structures</p>
+                </div>
+
+                <div class="lessons">
+                    <div class="lesson">
+                        <div class="lesson-icon"><i class="fas fa-play-circle"></i></div>
+                        <div class="lesson-content">
+                            <h3>Python Lists Fundamentals</h3>
+                            <p>Understanding how lists work and basic operations you can perform</p>
+                            <span class="duration">25 min</span>
+                        </div>
+                        <a href="https://youtu.be/ohCDWZgNIU0" class="lesson-btn" target="_blank">Watch</a>
+                    </div>
+
+                    <div class="lesson">
+                        <div class="lesson-icon"><i class="fas fa-play-circle"></i></div>
+                        <div class="lesson-content">
+                            <h3>Iterating Through Lists</h3>
+                            <p>How to use for loops with lists and exploring foreach-style iteration</p>
+                            <span class="duration">20 min</span>
+                        </div>
+                        <a href="https://youtu.be/9ZCEOTvpYLs" class="lesson-btn" target="_blank">Watch</a>
+                    </div>
+
+                    <div class="lesson project">
+                        <div class="lesson-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="lesson-content">
+                            <h3>Project: Task List Manager</h3>
+                            <p>Build a simple task manager application that uses lists to store and manipulate data</p>
+                            <span class="duration">45 min</span>
+                        </div>
+                        <a href="https://youtu.be/Zp5MuPOtsSY" class="lesson-btn" target="_blank">Start Project</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Community Help Section -->
-    <section class="community-help">
+    <section class="course-resources">
         <div class="container">
-            <div class="help-content">
-                <div class="help-icon">
-                    <i class="fas fa-users"></i>
-                </div>
-                <div class="help-text">
-                    <h2>Need help with this course?</h2>
-                    <p>Join our Discord community where you can ask questions, share your projects, and connect with other learners.</p>
-                </div>
-                <a href="#" class="btn btn-help">Join Our Community</a>
+            <h2>Additional Resources</h2>
+            <div class="resources-grid">
+                <a href="https://docs.python.org/3/" class="resource-card" target="_blank">
+                    <div class="resource-icon"><i class="fas fa-book"></i></div>
+                    <h3>Python Documentation</h3>
+                    <p>Official Python documentation with complete language reference</p>
+                </a>
+                <a href="https://replit.com/" class="resource-card" target="_blank">
+                    <div class="resource-icon"><i class="fas fa-code"></i></div>
+                    <h3>Replit</h3>
+                    <p>Online coding environment for practicing Python without installation</p>
+                </a>
+                <a href="https://github.com/python" class="resource-card" target="_blank">
+                    <div class="resource-icon"><i class="fab fa-github"></i></div>
+                    <h3>Python GitHub</h3>
+                    <p>Open source Python projects and examples to learn from</p>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Standard Footer -->
     <footer>
         <!-- ...existing footer code... -->
     </footer>
 
     <style>
+        :root {
+            --python-blue: #306998;
+            --python-yellow: #FFE873;
+            --module-inactive: #f8f9fa;
+            --module-active: #f0f0fe;
+            --module-border: #e4e0f5;
+        }
+        
         body {
             padding-top: 80px;
-            background-color: #f8f9fb;
+            background-color: #f8f9fa;
+            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
         }
         
         nav {
@@ -176,9 +270,13 @@
             padding: 0 2rem;
         }
         
-        /* Course Header */
         .course-header {
-            padding: 5rem 0 3rem;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, 
+                #9d7af3 0%,    /* Lighter purple */
+                #7046d3 50%,   /* Medium purple */
+                #4b23b7 100%   /* Deeper purple */
+            );
             color: white;
             text-align: center;
         }
@@ -202,55 +300,25 @@
         
         .course-icon i {
             font-size: 2.5rem;
-            color: #306998;
+            color: var(--python-blue);
         }
         
         .course-intro h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin-bottom: 1rem;
             color: white;
-            font-weight: 800;
+            font-weight: 700;
             font-family: 'Space Grotesk', sans-serif;
-            animation: fadeInUp 0.8s ease-out;
-            background: linear-gradient(135deg, #ffffff 0%, #e0d5ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
         
         .course-intro p {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            animation: fadeInUp 0.8s ease-out 0.2s backwards;
-            color: #f0e6ff;
+            opacity: 0.9;
             max-width: 600px;
-            margin: 0 auto;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 0 auto 1rem;
         }
         
-        .course-meta {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255,255,255,0.2);
-            padding: 0.7rem 1.2rem;
-            border-radius: 50px;
-            backdrop-filter: blur(5px);
-        }
-        
-        .meta-item i {
-            font-size: 1rem;
-        }
-        
-        /* Course Content */
         .course-content {
             padding: 4rem 0;
         }
@@ -263,6 +331,7 @@
             margin-bottom: 1.5rem;
             font-size: 1.8rem;
             color: var(--dark-text);
+            text-align: left;
         }
         
         .module-list {
@@ -271,41 +340,43 @@
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
+            margin-bottom: 2rem;
         }
         
         .module-item {
             flex: 1;
             min-width: 200px;
+            cursor: pointer;
         }
         
-        .module-item a {
+        .module-item {
             display: flex;
             flex-direction: column;
             padding: 1.5rem;
-            background: white;
+            background: var(--module-inactive);
             border-radius: 10px;
-            text-decoration: none;
+            border-left: 4px solid transparent;
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
-            border-left: 4px solid transparent;
         }
         
-        .module-item.active a {
-            border-left: 4px solid var(--deep-purple);
-            background: #fcfaff;
+        .module-item.active {
+            border-left-color: var(--deep-purple);
+            background: var(--module-active);
+            box-shadow: 0 3px 15px rgba(93, 94, 212, 0.15);
         }
         
-        .module-item a:hover {
-            transform: translateY(-5px);
+        .module-item:hover {
+            transform: translateY(-3px);
             box-shadow: 0 8px 15px rgba(0,0,0,0.1);
         }
         
         .module-number {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--light-purple);
-            opacity: 0.5;
-            line-height: 1;
+            color: var(--deep-purple);
+            opacity: 0.6;
+            line-height: 1.1;
         }
         
         .module-title {
@@ -321,10 +392,16 @@
         }
         
         .module-content {
+            display: none;
             background: white;
             border-radius: 12px;
             padding: 2rem;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .module-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
         }
         
         .module-header {
@@ -368,6 +445,7 @@
         .lesson-icon {
             width: 50px;
             height: 50px;
+            min-width: 50px;
             background: white;
             border-radius: 50%;
             display: flex;
@@ -399,7 +477,7 @@
         
         .duration {
             font-size: 0.9rem;
-            color: var(--gray-text);
+            color: var (--gray-text);
             display: flex;
             align-items: center;
             gap: 0.3rem;
@@ -413,6 +491,21 @@
         .lesson-btn {
             background: var(--deep-purple);
             color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .lesson-btn:hover {
+            background: var(--light-purple);
+            transform: translateY(-2px);
+        }
+        
+        .project {
+            border: 2px solid var(--light-purple);
             background: white;
         }
         
@@ -423,75 +516,67 @@
         .project .lesson-icon i {
             color: white;
         }
-        
-        /* Community Help Section */
-        .community-help {
-            padding: 4rem 0;
-            background: #fcfaff;
+
+        /* Resources Section */
+        .course-resources {
+            padding: 3rem 0 5rem;
+            background: linear-gradient(to bottom, #f8f9fa, #ffffff);
         }
-        
-        .help-content {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            padding: 3rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(124, 58, 237, 0.1);
-        }
-        
-        .help-icon {
-            font-size: 3rem;
-            color: var(--light-purple);
-        }
-        
-        .help-text {
-            flex: 1;
-        }
-        
-        .help-text h2 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
+
+        .course-resources h2 {
+            text-align: center;
+            margin-bottom: 2rem;
             color: var(--dark-text);
         }
-        
-        .help-text p {
-            color: var(--gray-text);
-            font-size: 1.1rem;
+
+        .resources-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
         }
-        
-        .btn-help {
-            background: var(--deep-purple);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 6px;
+
+        .resource-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            width: 300px;
+            text-align: center;
             text-decoration: none;
-            font-weight: 500;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
-            white-space: nowrap;
+            color: var(--dark-text);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .resource-icon {
+            font-size: 2rem;
+            color: var(--deep-purple);
+            margin-bottom: 1rem;
+        }
+
+        .resource-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .resource-card p {
+            color: var(--gray-text);
+            font-size: 0.9rem;
         }
         
-        .btn-help:hover {
-            background: var(--light-purple);
-            transform: translateY(-2px);
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         
         /* Responsive Design */
         @media (max-width: 768px) {
-            .course-meta {
-                flex-direction: column;
-                gap: 1rem;
-                align-items: center;
-            }
-            
-            .help-content {
-                flex-direction: column;
-                text-align: center;
-                padding: 2rem 1.5rem;
-            }
-            
             .module-list {
                 flex-direction: column;
             }
@@ -507,23 +592,52 @@
                 text-align: center;
                 margin-top: 1rem;
             }
+            
+            .course-intro h1 {
+                font-size: 2.2rem;
+            }
+            
+            .course-intro p {
+                font-size: 1rem;
+            }
+            
+            .resources-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .resource-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+
+        /* Remove the purple underline from section headers */
+        section h2::after,
+        .module-header h2::after {
+            display: none !important;
+        }
+        
+        /* Remove any other purple underlines */
+        .module-header {
+            border-bottom: 1px solid #f0f0f0;  /* Change to light gray border */
         }
     </style>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             // Mobile menu functionality
             const menuBtn = document.querySelector(".mobile-menu-btn");
             const navLinks = document.querySelector(".nav-links");
             const body = document.body;
 
-            menuBtn.addEventListener("click", function () {
+            menuBtn?.addEventListener("click", function() {
                 this.classList.toggle("active");
                 navLinks.classList.toggle("active");
                 body.classList.toggle("menu-open");
             });
 
-            document.querySelectorAll(".nav-links a").forEach((link) => {
+            document.querySelectorAll(".nav-links a").forEach(link => {
                 link.addEventListener("click", () => {
                     menuBtn.classList.remove("active");
                     navLinks.classList.remove("active");
@@ -531,25 +645,30 @@
                 });
             });
 
-            // Module navigation
-            document.querySelectorAll('.module-item a').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
+            // Module navigation functionality
+            const moduleItems = document.querySelectorAll('.module-item');
+            const moduleContents = document.querySelectorAll('.module-content');
+
+            moduleItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove active class from all items
+                    moduleItems.forEach(i => i.classList.remove('active'));
                     
-                    // Remove active class from all module items
-                    document.querySelectorAll('.module-item').forEach(item => {
-                        item.classList.remove('active');
+                    // Add active class to clicked item
+                    this.classList.add('active');
+                    
+                    // Hide all module contents
+                    moduleContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Show the corresponding module content
+                    const targetId = this.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                    
+                    // Scroll to the module content
+                    document.getElementById(targetId).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
-                    
-                    // Add active class to clicked module item
-                    this.closest('.module-item').classList.add('active');
-                    
-                    // Get target module ID
-                    const targetId = this.getAttribute('href');
-                    
-                    // For demo purposes, we're not loading different content
-                    // In a real app, you would load the module content here
-                    console.log(`Loading module content: ${targetId}`);
                 });
             });
         });
