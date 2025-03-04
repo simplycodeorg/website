@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-55L37MH9');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Platform - Simply Code</title>
@@ -8,6 +15,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55L37MH9"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
     <nav>
         <div class="nav-content">
             <div class="nav-top">
@@ -41,7 +53,7 @@
         <div class="container">
             <div class="catalog-header">
                 <div class="catalog-intro">
-                    <h2>Free Courses for Everyone</h2>
+                    <h2 class="text-left">Free Courses for Everyone</h2>
                     <p>Our courses are designed to make coding accessible, practical, and fun. Start your journey today.</p>
                 </div>
                 <div class="course-filters">
@@ -87,25 +99,25 @@
                 </div>
 
                 <div class="course-item coming-soon">
-                    <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1593720213428-28a5b9e94613?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
+                    <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80');">
                         <div class="course-overlay">
-                            <i class="fab fa-js"></i>
+                            <i class="fab fa-java"></i>
                         </div>
                     </div>
                     <div class="course-info">
                         <div class="course-tags">
                             <span class="course-tag">Intermediate</span>
-                            <span class="course-tag">Web Dev</span>
+                            <span class="course-tag">Object-Oriented</span>
                         </div>
-                        <h3>JavaScript Essentials</h3>
-                        <p>Learn interactive web development with JavaScript. Create dynamic web applications from scratch.</p>
+                        <h3>Java Development</h3>
+                        <p>Learn object-oriented programming with Java. Build applications from the ground up.</p>
                         <div class="course-progress">
                             <div class="progress-label">
                                 <span>Coming Soon</span>
-                                <span>75% Complete</span>
+                                <span>70% Complete</span>
                             </div>
                             <div class="progress-bar">
-                                <div class="progress" style="width: 75%;"></div>
+                                <div class="progress" style="width: 70%;"></div>
                             </div>
                             <span class="release-date">Expected: Summer 2024</span>
                         </div>
@@ -278,7 +290,8 @@
         }
 
         .catalog-intro {
-            max-width: 600px;
+            max-width: 800px;
+            margin-left: 0;
         }
 
         .catalog-intro h2 {
@@ -436,7 +449,7 @@
 
         .detail span {
             font-size: 0.85rem;
-            color: var(--gray-text);
+            color: var (--gray-text);
         }
 
         .course-action {
@@ -618,6 +631,20 @@
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
+        }
+
+        /* Remove the underline effect from all section headers */
+        section h2::after,
+        .catalog-intro h2::after,
+        h2::after {
+            display: none !important;
+        }
+        
+        /* Left align the heading with no padding */
+        .text-left {
+            text-align: left !important;
+            padding-left: 0 !important;
+            margin-left: 0 !important;
         }
     </style>
 

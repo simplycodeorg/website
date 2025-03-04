@@ -1902,3 +1902,93 @@ section h2 {
 .developer-card .volunteer-hours {
     background: rgba(124, 58, 237, 0.1);
 }
+
+/* Add these styles for the dropdown menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -10px;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    z-index: 1000;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+}
+
+.dropdown-content a {
+    color: var(--gray-text);
+    padding: 0.8rem 1.5rem;
+    display: block;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+    background: rgba(124, 58, 237, 0.05);
+    color: var(--light-purple);
+}
+
+.dropdown-content a.active {
+    color: var(--light-purple);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Dropdown indicator */
+.dropdown > a::after {
+    content: '\f107'; /* Font Awesome down arrow */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
+}
+
+.dropdown:hover > a::after {
+    transform: rotate(180deg);
+}
+
+/* Mobile dropdown adjustments */
+@media (max-width: 768px) {
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background: rgba(124, 58, 237, 0.05);
+        border-radius: 0;
+        display: none;
+        transform: none;
+        padding: 0;
+        margin-left: 1rem;
+    }
+    
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown-content a {
+        padding: 0.8rem;
+    }
+    
+    .dropdown > a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

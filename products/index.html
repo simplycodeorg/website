@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-55L37MH9');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products & Events - Simply Code</title>
@@ -17,6 +24,11 @@
     />
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55L37MH9"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
     <nav>
       <div class="nav-content">
         <div class="nav-top">
@@ -65,6 +77,41 @@
         </div>
       </div>
     </section>
+
+    <div class="container">
+      <section class="products-grid">
+        <div class="section-header">
+          <h2>Our Educational Products</h2>
+          <p class="section-description">Choose from our range of free educational resources designed to make coding accessible to everyone</p>
+        </div>
+        
+        <div class="products-container">
+          <div class="product-card">
+            <div class="product-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Online Courses</h3>
+            <p>Self-paced courses covering programming fundamentals, web development, and more.</p>
+            <a href="/products/courses" class="btn-product">Browse Courses</a>
+          </div>
+          
+          <div class="product-card featured">
+            <div class="product-badge">New!</div>
+            <div class="product-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Summer Web Development Bootcamp</h3>
+            <p>Build your own website from scratch and receive free hosting, domain name, and showcase opportunities.</p>
+            <div class="product-features">
+              <span><i class="fas fa-check"></i> Free Domain & Hosting</span>
+              <span><i class="fas fa-check"></i> Live Instruction</span>
+              <span><i class="fas fa-check"></i> Portfolio Project</span>
+            </div>
+            <a href="/products/bootcamp" class="btn-featured">Learn More</a>
+          </div>
+        </div>
+      </section>
+    </div>
 
     <div class="container">
       <section id="featured-programs">
@@ -663,6 +710,177 @@
         }
     }
 
+    .products-grid {
+        padding: 6rem 0;
+    }
+    
+    .section-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 4rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2.8rem;
+        color: var(--dark-text);
+        margin-bottom: 1rem;
+    }
+    
+    .section-header h2::after {
+        display: none;
+    }
+    
+    .section-description {
+        font-size: 1.2rem;
+        color: var(--gray-text);
+        line-height: 1.6;
+    }
+    
+    .products-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 3rem;
+        margin-top: 2rem;
+    }
+    
+    .product-card {
+        background: white;
+        border-radius: 12px;
+        padding: 3rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .product-badge {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: var(--light-purple);
+        color: white;
+        padding: 0.4rem 1rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+    
+    .product-icon {
+        width: 70px;
+        height: 70px;
+        background: var(--light-purple);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .product-icon i {
+        font-size: 1.8rem;
+    }
+    
+    .product-card h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: var(--dark-text);
+    }
+    
+    .product-card p {
+        color: var(--gray-text);
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+    
+    .product-features {
+        margin: 1.5rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .product-features span {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--gray-text);
+    }
+    
+    .product-features i {
+        color: var(--light-purple);
+    }
+    
+    .btn-product {
+        display: inline-block;
+        padding: 0.8rem 2rem;
+        background: transparent;
+        color: var(--light-purple);
+        border: 2px solid var(--light-purple);
+        border-radius: 8px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        text-align: center;
+        margin-top: auto;
+    }
+    
+    .btn-product:hover {
+        background: var(--light-purple);
+        color: white;
+    }
+    
+    .btn-featured {
+        display: inline-block;
+        padding: 0.8rem 2rem;
+        background: var(--light-purple);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        text-align: center;
+        margin-top: auto;
+    }
+    
+    .btn-featured:hover {
+        background: var(--deep-purple);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(93, 94, 212, 0.2);
+    }
+    
+    .featured {
+        border: 2px solid var(--light-purple);
+        box-shadow: 0 5px 20px rgba(93, 94, 212, 0.15);
+    }
+
+    /* Fix order of content on the page */
+    .hero {
+        margin-top: 80px; /* Add space for fixed navbar */
+        order: 1;
+    }
+    
+    .products-grid {
+        order: 2;
+    }
+    
+    #featured-programs {
+        order: 3;
+    }
+
+    @media (max-width: 768px) {
+        .products-container {
+            grid-template-columns: 1fr;
+            padding: 0 1rem;
+        }
+    }
 </style>
 
 
@@ -716,6 +934,17 @@
               }
           });
       </script>
+      <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const mainContent = document.querySelector('body');
+        const heroSection = document.querySelector('.hero');
+        const productsGrid = document.querySelector('.products-grid').closest('.container');
+        const featuredPrograms = document.getElementById('featured-programs').closest('.container');
+        
+        // Fix the ordering
+        mainContent.insertBefore(heroSection, productsGrid);
+    });
+</script>
 
   </body>
 </html>
