@@ -34,7 +34,13 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About Us</a></li>
                 <li><a href="/events">Events</a></li>
-                <li><a href="/products" class="active">Products</a></li>
+                <li class="dropdown active">
+                    <a href="/products">Products</a>
+                    <div class="dropdown-content">
+                        <a href="/products/courses" class="active">Courses</a>
+                        <a href="/products/bootcamp">Summer Bootcamp</a>
+                    </div>
+                </li>
                 <li><a href="/join">Join Us</a></li>
                 <li><a href="/donate" class="btn-nav">Donate</a></li>
             </ul>
@@ -646,6 +652,100 @@
             padding-left: 0 !important;
             margin-left: 0 !important;
         }
+
+        /* Dropdown menu styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: -10px;
+            background: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+            z-index: 1000;
+            transform: translateY(10px);
+            opacity: 0;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            pointer-events: none;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .dropdown-content a {
+            color: var(--gray-text);
+            padding: 0.8rem 1.5rem;
+            display: block;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            white-space: nowrap;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(124, 58, 237, 0.05);
+            color: var(--light-purple);
+        }
+
+        .dropdown-content a.active {
+            color: var(--light-purple);
+            background: rgba(124, 58, 237, 0.05);
+        }
+
+        /* Dropdown indicator */
+        .dropdown > a::after {
+            content: '\f107'; /* Font Awesome down arrow */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            margin-left: 0.4rem;
+            vertical-align: middle;
+            transition: transform 0.2s ease;
+        }
+
+        .dropdown:hover > a::after {
+            transform: rotate(180deg);
+        }
+
+        /* Mobile dropdown adjustments */
+        @media (max-width: 768px) {
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                background: rgba(124, 58, 237, 0.05);
+                border-radius: 0;
+                display: none;
+                transform: none;
+                padding: 0;
+                margin-left: 1rem;
+                pointer-events: auto;
+                opacity: 1;
+            }
+            
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+            
+            .dropdown-content a {
+                padding: 0.8rem;
+            }
+            
+            .dropdown > a {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
     </style>
 
     <script>
@@ -661,10 +761,18 @@
             });
 
             document.querySelectorAll(".nav-links a").forEach((link) => {
-                link.addEventListener("click", () => {
-                    menuBtn.classList.remove("active");
-                    navLinks.classList.remove("active");
-                    body.classList.remove("menu-open");
+                link.addEventListener("click", (e) => {
+                    // Only close menu if it's not a dropdown toggle on mobile
+                    if (window.innerWidth <= 768 && 
+                        link.parentElement.classList.contains("dropdown") && 
+                        !link.closest(".dropdown-content")) {
+                        e.preventDefault();
+                        link.parentElement.classList.toggle("active");
+                    } else {
+                        menuBtn.classList.remove("active");
+                        navLinks.classList.remove("active");
+                        body.classList.remove("menu-open");
+                    }
                 });
             });
         });
