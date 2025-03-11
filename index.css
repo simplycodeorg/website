@@ -1951,18 +1951,21 @@ section h2 {
     pointer-events: auto;
 }
 
-/* Dropdown indicator */
+/* Remove dropdown arrow from all products dropdown elements */
 .dropdown > a::after {
-    content: '\f107'; /* Font Awesome down arrow */
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    margin-left: 0.4rem;
-    vertical-align: middle;
-    transition: transform 0.2s ease;
+    display: none !important;
 }
 
+/* Ensure hover styles still work but don't rely on the arrow */
 .dropdown:hover > a::after {
-    transform: rotate(180deg);
+    transform: none !important;
+}
+
+/* For mobile layout */
+@media (max-width: 768px) {
+    .dropdown > a {
+        justify-content: center !important;
+    }
 }
 
 /* Mobile dropdown adjustments */

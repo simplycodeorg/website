@@ -84,7 +84,7 @@
                         </div>
                         <h3>Python Fundamentals</h3>
                         <p>Build a strong foundation in Python programming with hands-on projects and interactive lessons.</p>
-                        <div class="course-details">
+                        <!-- <div class="course-details">
                             <div class="detail">
                                 <i class="fas fa-book"></i>
                                 <span>5 Modules</span>
@@ -100,6 +100,17 @@
                         </div>
                         <div class="course-action">
                             <a href="/products/courses/python" class="btn btn-course">Start Learning</a>
+                        </div> -->
+
+                        <div class="course-progress">
+                            <div class="progress-label">
+                                <span>Coming Soon</span>
+                                <span>40% Complete</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 40%;"></div>
+                            </div>
+                            <span class="release-date">Expected: April 2025</span>
                         </div>
                     </div>
                 </div>
@@ -125,7 +136,7 @@
                             <div class="progress-bar">
                                 <div class="progress" style="width: 70%;"></div>
                             </div>
-                            <span class="release-date">Expected: Summer 2024</span>
+                            <span class="release-date">Expected: Summer 2025</span>
                         </div>
                     </div>
                 </div>
@@ -151,7 +162,7 @@
                             <div class="progress-bar">
                                 <div class="progress" style="width: 40%;"></div>
                             </div>
-                            <span class="release-date">Expected: Fall 2024</span>
+                            <span class="release-date">Expected: Fall 2025</span>
                         </div>
                     </div>
                 </div>
@@ -195,18 +206,62 @@
         </div>
     </section>
 
-    <section class="join-learning">
-        <div class="container">
-            <div class="join-content">
-                <h2>Ready to start learning?</h2>
-                <p>Begin your coding journey with our Python fundamentals course today.</p>
-                <a href="/products/courses/python" class="btn btn-cta">Get Started Now</a>
-            </div>
-        </div>
-    </section>
-
     <footer>
-        <!-- Existing footer code -->
+        <div class="footer-content">
+            <div class="footer-section">
+                <img style="height:80px;" src="../../SC transparent.png" alt="Simply Code" class="footer-logo">
+                <p>Empowering the next generation of students through accessible education.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/simply-codeorg" class="social-link" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/simplycodeofficial" class="social-link" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@simplycodeofficial" class="social-link" target="_blank" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@simplycode101" class="social-link" target="_blank" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/events">Events</a></li>
+                    <li><a href="/join">Join Us</a></li>
+                    <li><a href="/donate">Donate</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="mailto:info@wesimplycode.org">info@wesimplycode.org</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+              <h3>Newsletter</h3>
+              <p>Stay updated with our latest news and events.</p>
+              <a href="https://cdn.forms-content-1.sg-form.com/0da89345-f329-11ef-9b9f-9664681eba1a" 
+                 class="newsletter-btn" 
+                 target="_blank">
+                  Subscribe to Newsletter
+              </a>
+          </div>
+          
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="dev-credit">
+              Developed by <span class="dev-signature"><a href="https://www.linkedin.com/in/rudra-p-167355302/" style="text-decoration:none;">Rudra Pandit</a></span>
+            </div>
+            <p>&copy; 2025 Simply Code. All rights reserved.</p>
+        </div>
     </footer>
 
     <style>
@@ -703,15 +758,7 @@
             background: rgba(124, 58, 237, 0.05);
         }
 
-        /* Dropdown indicator */
-        .dropdown > a::after {
-            content: '\f107'; /* Font Awesome down arrow */
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            margin-left: 0.4rem;
-            vertical-align: middle;
-            transition: transform 0.2s ease;
-        }
+  
 
         .dropdown:hover > a::after {
             transform: rotate(180deg);
@@ -744,6 +791,23 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+            }
+        }
+
+        /* Override the dropdown arrow specifically for this page */
+        .dropdown > a::after {
+            content: none !important; /* Remove the dropdown arrow */
+        }
+        
+        /* Keep the hover arrow removal consistent */
+        .dropdown:hover > a::after {
+            transform: none !important;
+        }
+        
+        /* For mobile layout */
+        @media (max-width: 768px) {
+            .dropdown > a {
+                justify-content: center !important; /* Center the text without the arrow */
             }
         }
     </style>

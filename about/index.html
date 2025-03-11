@@ -388,6 +388,34 @@
             });
         });
     });
+
+    // Function to handle email links and show popup instead of opening mail client
+    document.addEventListener('DOMContentLoaded', function() {
+        // Find all mailto links
+        const mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
+        
+        // Add click event listener to each mailto link
+        mailtoLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default mailto behavior
+                
+                // Extract email from href
+                const email = this.getAttribute('href').replace('mailto:', '');
+                
+                // Create popup alert with email
+                alert('Email address: ' + email);
+                
+                // Optional: copy email to clipboard
+                navigator.clipboard.writeText(email)
+                    .then(() => {
+                        console.log('Email copied to clipboard');
+                    })
+                    .catch(err => {
+                        console.error('Could not copy email: ', err);
+                    });
+            });
+        });
+    });
     </script>
  
   </body>

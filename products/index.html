@@ -989,6 +989,24 @@
             align-items: center;
         }
     }
+
+    /* Override dropdown indicator to completely remove it */
+    .dropdown > a::after {
+        content: none !important;
+        display: none !important;
+    }
+
+    /* Make sure the hover transform is also disabled */
+    .dropdown:hover > a::after {
+        transform: none !important;
+    }
+    
+    /* Fix mobile dropdown layout */
+    @media (max-width: 768px) {
+        .dropdown > a {
+            justify-content: center !important;
+        }
+    }
 </style>
 
 

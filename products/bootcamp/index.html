@@ -548,45 +548,23 @@
 
         /* Dropdown indicator */
         .dropdown > a::after {
-            content: '\f107'; /* Font Awesome down arrow */
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            margin-left: 0.4rem;
-            vertical-align: middle;
-            transition: transform 0.2s ease;
+            content: none !important;
+            display: none !important;
         }
 
         .dropdown:hover > a::after {
-            transform: rotate(180deg);
+            transform: none !important;
         }
 
         /* Mobile dropdown adjustments */
         @media (max-width: 768px) {
-            .dropdown-content {
-                position: static;
-                box-shadow: none;
-                background: rgba(124, 58, 237, 0.05);
-                border-radius: 0;
-                display: none;
-                transform: none;
-                padding: 0;
-                margin-left: 1rem;
-                pointer-events: auto;
-                opacity: 1;
-            }
-            
-            .dropdown.active .dropdown-content {
-                display: block;
-            }
-            
-            .dropdown-content a {
-                padding: 0.8rem;
-            }
-            
             .dropdown > a {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+                justify-content: center !important;
+            }
+            
+            .dropdown > a::after {
+                display: none !important;
+                content: none !important;
             }
         }
     </style>
