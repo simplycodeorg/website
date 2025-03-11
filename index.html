@@ -224,7 +224,49 @@
 
         </section>
 
-      
+        <section id="testimonials" class="reveal">
+    <div class="container">
+      <center>
+        <h2 class="testimonials-heading">What Our Members Say</h2>
+
+        </center>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p>"The Tech Pathways AMA was a well thought out event that really catered to the students. I would definitely return as a panelist in the future to continue helping the next generation."</p>
+                <div class="testimonial-author">
+                    <img src="/teamPictures/lissetrico.jpg" alt="User 1">
+                    <div>
+                        <h3>Lisset Rico</h3>
+                        <p>Tech Pathways Panelist </p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p>
+                    
+                    "The Tech Pathways AMA was a great experience. I really enjoyed it and learned so much about the computer science work field and computer science in college."
+                </p>
+                <div class="testimonial-author">
+                    <img src="teamPictures/placeholder.jpg" alt="User 2">
+                    <div>
+                        <h3>Saadullah Ismail                         </h3>
+                        <p>Student</p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="testimonial-card">
+                <p>"Partnering with Simply Code has been a rewarding experience. Their dedication to education is truly inspiring."</p>
+                <div class="testimonial-author">
+                    <img src="teamPictures/lissetrico.jpg" alt="User 3">
+                    <div>
+                        <h3></h3>
+                        <p>Partner</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</section>
 
     </div>
 
@@ -963,5 +1005,74 @@
         transform: translateY(-2px);
         box-shadow: 0 4px 15px rgba(93, 94, 212, 0.2);
         background: var(--light-purple);
+    }
+
+    /* Testimonials Section */
+    #testimonials {
+        padding: 5rem 0;
+        background: var(--white); /* Changed from off-white to white */
+    }
+
+    #testimonials .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .testimonials-heading {
+        color: var(--light-purple) !important; /* Purple heading */
+        text-align: center;
+        font-weight: 700;
+        font-size: 2.8rem;
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .testimonial-card {
+        background: var(--off-white); /* Changed to grey background */
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-card p {
+        font-size: 1.1rem;
+        color: var(--gray-text);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .testimonial-author img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .testimonial-author h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.2rem;
+        color: var(--dark-text);
+    }
+
+    .testimonial-author p {
+        font-size: 0.9rem;
+        color: var(--gray-text);
+        margin-bottom: 0;
     }
 </style>
