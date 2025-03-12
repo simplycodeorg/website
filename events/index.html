@@ -60,11 +60,10 @@
             </div>
         </div>
     </section>
-
     <section class="events-section">
     <div class="container">
         <!-- Move this section first -->
-        <section class="upcoming-events">
+        <!-- <section class="upcoming-events">
             <div class="container">
                 <div class="section-header" style="margin-bottom: 3rem;">
                     <h2 style="color: var(--deep-purple); font-size: 2.8rem; font-weight: 700;">Upcoming Events</h2>
@@ -82,6 +81,29 @@
                             <span><i class="far fa-clock"></i> 2 hours</span>
                         </div>
                         <a href="https://tally.so/r/nrk2q2" target="_blank" class="btn btn-primary">Register Now</a>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <section class="upcoming-events">
+            <div class="container">
+                <div class="section-header" style="margin-bottom: 3rem;">
+                    <h2 style="color: var(--deep-purple); font-size: 2.8rem; font-weight: 700;">Past Events</h2>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="date" >MAR 9</span>
+                        <span class="time">5:00 PM EST</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Tech Pathways AMA</h3>
+                        <p>Thanks for attending our interactive Ask Me Anything session about career paths in technology.</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-video"></i> Virtual Event (Zoom)</span>
+                            <span><i class="far fa-clock"></i> 2 hours</span>
+                        </div>
+                        <a href="/events/tech-pathways-ama" target="_blank" class="btn btn-primary">Event Overview</a>
                     </div>
                 </div>
             </div>
@@ -129,6 +151,45 @@
                     <li>Project Support</li>
                 </ul>
                 <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="past-events-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Past Events</h2>
+            <p class="section-description">Explore our previous workshops and events.</p>
+        </div>
+        <div class="events-grid">
+            <!-- Tech Pathways Event moved from upcoming to past -->
+            <div class="event-card past">
+                <div class="event-image">
+                    <img src="https://images.unsplash.com/photo-1573166364524-d9dbfd8bbf83?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Tech Pathways Workshop">
+                    <div class="event-overlay"></div>
+                    <div class="event-date">
+                        <span class="month">May</span>
+                        <span class="day">15</span>
+                    </div>
+                </div>
+                <div class="event-content">
+                    <div class="event-details">
+                        <h3>Tech Pathways Workshop</h3>
+                        <p class="event-meta">
+                            <i class="fas fa-clock"></i> 4:00 PM - 6:00 PM PST
+                        </p>
+                        <p class="event-meta">
+                            <i class="fas fa-map-marker-alt"></i> Online (Zoom)
+                        </p>
+                        <p class="event-description">
+                            Discover various career paths in technology and how to prepare for them.
+                        </p>
+                    </div>
+                    <div class="event-footer">
+                        <a href="./tech-pathways-ama" class="btn-view-event">View Event</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -259,6 +320,32 @@
         gap: 0.5rem;
     }
 }
+
+.past-events-section {
+    padding: 5rem 0;
+    /* Removed background color to match the page's default background */
+}
+
+.past-events-section .section-header h2 {
+    color: var(--dark-text); /* Using default text color instead of gray */
+}
+
+/* Update button style to match design */
+.btn-view-event {
+    background: var(--light-purple);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-weight: 500;
+}
+
+.btn-view-event:hover {
+    background: var(--deep-purple);
+    transform: translateY(-2px);
+}
 </style>
     </section>
 
@@ -330,7 +417,7 @@
         // Modal functionality
         const modal = document.getElementById('comingSoonModal');
         const closeBtn = document.getElementsByClassName('close')[0];
-        const allButtons = document.querySelectorAll('.btn:not([href^="https://tally.so"])');
+        const allButtons = document.querySelectorAll('.btn:not([href^="/"])');
 
         // Add click handler to buttons (excluding the register button)
         allButtons.forEach(button => {
