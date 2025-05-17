@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Database | Simply Code</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --deep-purple: #5D5ED4;
+            --light-purple: #8C8DFF;
+            --off-white: #F9F9F9;
+            --white: #FFFFFF;
+            --dark-text: #333333;
+            --gray-text: #666666;
+            --light-gray: #EEEEEE;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-top {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo {
+            height: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--deep-purple);
+        }
+
+        .btn-nav {
+            background: var(--deep-purple);
+            color: white !important;
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-nav:hover {
+            background: var(--light-purple);
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Search section */
+        .search-section {
+            background: var(--white);
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .search-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .search-box {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            border-color: var(--light-purple);
+            outline: none;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-text);
+        }
+
+        .filter-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .filter-group {
+            margin-bottom: 1rem;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+
+        .filter-group select, .filter-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+
+        .filter-group select:focus, .filter-group input:focus {
+            border-color: var(--light-purple);
+            outline: none;
+        }
+
+        .category-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .category-chip {
+            background: var(--off-white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--gray-text);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .category-chip:hover, .category-chip.active {
+            background: rgba(93, 94, 212, 0.1);
+            color: var(--deep-purple);
+            border-color: var(--light-purple);
+        }
+
+        .btn-primary {
+            background: var(--deep-purple);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--light-purple);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--deep-purple);
+            border: 2px solid var(--deep-purple);
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(93, 94, 212, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .btn-filter {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        /* Programs section */
+        .programs-section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray-text);
+            max-width: 600px;
+            margin: 1rem auto 0;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .program-card-header {
+            background: linear-gradient(45deg, var(--deep-purple), var(--light-purple));
+            padding: 1.5rem;
+            color: white;
+        }
+
+        .program-card-header h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .program-card-body {
+            padding: 1.5rem;
+        }
+
+        .program-detail {
+            display: flex;
+            margin-bottom: 1rem;
+            align-items: flex-start;
+        }
+
+        .program-detail i {
+            color: var(--deep-purple);
+            min-width: 1.5rem;
+            margin-right: 0.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .program-detail-content {
+            flex: 1;
+        }
+
+        .program-detail-content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .program-detail-content p {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+        }
+        @keyframes moveBackground {
+        0% {
+            background-position: 0 0, 0 0, 0 0;
+        }
+        100% {
+            background-position: 50px 50px, 25px 25px, 25px 25px;
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .about-hero-text h1 {
+            font-size: 3.5rem;
+        }
+
+        .about-hero-text p {
+            font-size: 1.2rem;
+            padding: 0 20px;
+        }
+
+        .network-background {
+            background-size: 30px 30px, 15px 15px, 15px 15px;
+        }
+    }
+
+    .hero {
+        background: linear-gradient(135deg, 
+            #9d7af3 0%,    /* Lighter purple */
+            #7046d3 50%,   /* Medium purple */
+            #4b23b7 100%   /* Deeper purple */
+        );
+        min-height: 65vh;
+        padding: 80px 0 60px 0;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+
+        .program-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .program-tag {
+            background: rgba(93, 94, 212, 0.1);
+            color: var(--deep-purple);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .program-apply {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .program-apply a {
+            display: inline-block;
+            background: var(--deep-purple);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .program-apply a:hover {
+            background: var(--light-purple);
+            transform: translateY(-2px);
+        }
+
+        .deadline {
+            font-weight: 600;
+            color: #e74c3c;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .page-item {
+            margin: 0 0.3rem;
+        }
+
+        .page-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--light-gray);
+            color: var(--dark-text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .page-link:hover, .page-link.active {
+            background: var(--deep-purple);
+            color: white;
+            border-color: var(--deep-purple);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-text);
+            color: white;
+            padding: 4rem 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-section p {
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .footer-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--deep-purple);
+            transform: translateY(-3px);
+        }
+
+        .newsletter-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--deep-purple);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .newsletter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(93, 94, 212, 0.2);
+            background: var(--light-purple);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dev-signature {
+            background: linear-gradient(45deg, var(--light-purple), var(--deep-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 992px) {
+            .programs-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav-top {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 30px;
+                height: 21px;
+            }
+            
+            .mobile-menu-btn span {
+                height: 3px;
+                width: 100%;
+                background-color: var(--dark-text);
+                border-radius: 3px;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                height: 0;
+                overflow: hidden;
+                transition: height 0.3s ease;
+            }
+            
+            .nav-links.active {
+                height: auto;
+                margin-top: 1rem;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+            
+            .filter-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section-header {
+        margin-top: 4rem;  /* Add this line */
+    }
+
+    .about-hero-grid {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .about-hero-text {
+        color: white;
+    }
+
+
+     /* Update footer developer signature */
+     .footer-bottom {
+        text-align: center;
+        padding: 1.5rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dev-signature {
+        background: linear-gradient(45deg, var(--light-purple), var(--deep-purple));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 600;
+        font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .footer-bottom .dev-credit {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .about-hero-text h1 {
+        font-size: 4.5rem;
+        font-weight: 800;
+        margin-bottom: 1.2rem;
+        font-family: 'Space Grotesk', sans-serif;
+        animation: fadeInUp 0.8s ease-out;
+        background: linear-gradient(135deg, #ffffff 0%, #e0d5ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+
+    .about-hero-text p {
+        font-size: 1.4rem;
+        line-height: 1.6;
+        opacity: 0.95;
+        animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        color: #f0e6ff;
+        max-width: 600px;
+        margin: 0 auto;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+        @media (max-width: 480px) {
+            .header {
+                padding: 100px 0 40px 0;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .search-section {
+                padding: 2rem 0;
+            }
+            
+            .programs-section {
+                padding: 2rem 0;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <div class="nav-top">
+                <img style="height:50px;" src="../SC transparent.png" alt="Simply Code" class="nav-logo">
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/internships" class="active">Internships</a></li>
+                <li><a href="/join">Join Us</a></li>
+                <li><a href="/donate" class="btn-nav">Donate</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" style="background: linear-gradient(135deg, 
+    #9d7af3 0%,    /* Lighter purple */
+    #7046d3 50%,   /* Medium purple */
+    #4b23b7 100%   /* Deeper purple */
+);">
+        <div class="container">
+            <div class="about-hero-grid">
+                <div class="about-hero-text">
+                    <h1>Resource Database</h1>
+                    <p>Explore opportunities that align with your passions and potential.
+                    </p>                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Search Section
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search for internships, programs, or keywords...">
+                </div>
+                
+                <div class="filter-container">
+                    <div class="filter-group">
+                        <label for="location">Location</label>
+                        <select id="location">
+                            <option value="">All Locations</option>
+                            <option value="remote">Remote</option>
+                            <option value="hybrid">Hybrid</option>
+                            <option value="onsite">On-site</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="field">Field/Industry</label>
+                        <select id="field">
+                            <option value="">All Fields</option>
+                            <option value="tech">Technology</option>
+                            <option value="data">Data Science</option>
+                            <option value="design">Design</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="business">Business</option>
+                            <option value="healthcare">Healthcare</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="duration">Duration</label>
+                        <select id="duration">
+                            <option value="">Any Duration</option>
+                            <option value="summer">Summer</option>
+                            <option value="semester">Semester</option>
+                            <option value="year">Year-round</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="deadline">Application Deadline</label>
+                        <input type="date" id="deadline">
+                    </div>
+                </div>
+                
+                <div class="category-chips">
+                    <div class="category-chip">STEM</div>
+                    <div class="category-chip">Computer Science</div>
+                    <div class="category-chip">Design</div>
+                    <div class="category-chip">Business</div>
+                    <div class="category-chip">Arts</div>
+                    <div class="category-chip">Healthcare</div>
+                    <div class="category-chip">Research</div>
+                    <div class="category-chip">Paid</div>
+                    <div class="category-chip">Remote</div>
+                </div>
+                
+                <div class="btn-filter">
+                    <button class="btn-primary">Filter Results</button>
+                    <button class="btn-secondary" style="margin-left: 1rem;">Reset</button>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Programs Section -->
+    <section class="programs-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Opportunities</h2>
+                <p>Discover internships and programs designed to help you grow your skills and build your future</p>
+            </div>
+            
+            <div class="programs-grid">
+                <!-- Program Card 1 -->
+                <div class="program-card">
+                    <div class="program-card-header">
+                        <h3>Google Summer of Code</h3>
+                        <p>Global program focusing on bringing more student developers into open source software development</p>
+                    </div>
+                    <div class="program-card-body">
+                        <div class="program-detail">
+                            <i class="fas fa-user-graduate"></i>
+                            <div class="program-detail-content">
+                                <h4>Eligibility</h4>
+                                <p>College students, age 18+</p>
+                            </div>
+                        </div>
+                        <div class="program-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="program-detail-content">
+                                <h4>Location</h4>
+                                <p>Remote</p>
+                            </div>
+                        </div>
+                        <div class="program-detail">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div class="program-detail-content">
+                                <h4>Duration</h4>
+                                <p>May 31 - August 31, 2025</p>
+                            </div>
+                        </div>
+                        <div class="program-tags">
+                            <span class="program-tag">STEM</span>
+                            <span class="program-tag">Computer Science</span>
+                            <span class="program-tag">Paid</span>
+                            <span class="program-tag">Remote</span>
+                        </div>
+                        <div class="deadline">Application Deadline: March 15, 2025</div>
+                        <div class="program-apply">
+                            <a href="#">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Program Card 2 -->
+                <div class="program-card">
+                    <div class="program-card-header">
+                        <h3>Microsoft New Technologists</h3>
+                        <p>Program for high school students interested in technology and computer science</p>
+                    </div>
+                    <div class="program-card-body">
+                        <div class="program-detail">
+                            <i class="fas fa-user-graduate"></i>
+                            <div class="program-detail-content">
+                                <h4>Eligibility</h4>
+                                <p>High school students, grades 9-12</p>
+                            </div>
+                        </div>
+                        <div class="program-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="program-detail-content">
+                                <h4>Location</h4>
+                                <p>Hybrid (Online with in-person events)</p>
+                            </div>
+                        </div>
+                        <div class="program-detail">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div class="program-detail-content">
+                                <h4>Duration</h4>
+                                <p>June 15 - July 30, 2025</p>
+                            </div>
+                        </div>
+                        <div class="program-tags">
+                            <span class="program-tag">STEM</span>
+                            <span class="program-tag">Computer Science</span>
+                            <span class="program-tag">Summer</span>
+                        </div>
+                        <div class="deadline">Application Deadline: April 1, 2025</div>
+                        <div class="program-apply">
+                            <a href="#">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Program Card 3 -->
+                <div class="program-card">
+                    <div class="program-card-header">
+                        <h3>NASA STEM Enhancement in Earth Science</h3>
+                        <p>Research opportunity for high school students to work with NASA scientists</p>
+                    </div>
+                    <div class="program-card-body">
+                        <div class="program-detail">
+                            <i class="fas fa-user-graduate"></i>
+                            <div class="program-detail-content">
+                                <h4>Eligibility</h4>
+                                <p>High school students, ages 16+</p>
+                            </div>
+                        </div>
+                        <div class="program-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="program-detail-content">
+                                <h4>Location</h4>
+                                <p>On-site (Austin, TX)</p>
+                            </div>
+                        </div>
+                        <div class="program-detail">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div class="program-detail-content">
+                                <h4>Duration</h4>
+                                <p>July 10 - August 5, 2025</p>
+                            </div>
+                        </div>
+                        <div class="program-tags">
+                            <span class="program-tag">STEM</span>
+                            <span class="program-tag">Research</span>
+                            <span class="program-tag">Summer</span>
+                        </div>
+                        <div class="deadline">Application Deadline: February 1, 2025</div>
+                        <div class="program-apply">
+                            <a href="#">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Program Card 4 -->
+                <div class="program-card">
+                    <div class="program-card-header">
+                        <h3>Adobe Design Circle</h3>
+                        <p>Program for creative students interested in digital design and media</p>
+                    </div>
+                    <div class="program-card-body">
+                        <div class="program-detail">
+                            <i class="fas fa-user-graduate"></i>
+                            <div class="program-detail-content">
+                                <h4>Eligibility</h4>
+                                <p>High school and college students, ages 16-22</p>
+                            </div>
+                        </div>
+                        <div class="program-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="program-detail-content">
+                                <h4>Location</h4>
+                                <p>Remote</p>
+                            </div>
+                        </div>
+                        <div class="program-detail">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div class="program-detail-content">
+                                <h4>Duration</h4>
+                                <p>June 1 - August 15, 2025</p>
+                            </div>
+                        </div>
+                        <div class="program-

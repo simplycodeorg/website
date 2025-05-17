@@ -63,28 +63,28 @@
     <section class="events-section">
     <div class="container">
         <!-- Move this section first -->
-        <!-- <section class="upcoming-events">
+        <section class="upcoming-events">
             <div class="container">
                 <div class="section-header" style="margin-bottom: 3rem;">
                     <h2 style="color: var(--deep-purple); font-size: 2.8rem; font-weight: 700;">Upcoming Events</h2>
                 </div>
                 <div class="event-card">
                     <div class="event-date">
-                        <span class="date" >MAR 9</span>
-                        <span class="time">5:00 PM EST</span>
+                        <span class="date" >APR 12</span>
+                        <span class="time">2:00 PM EST</span>
                     </div>
                     <div class="event-details">
-                        <h3>Tech Pathways AMA</h3>
-                        <p>Join us for an interactive Ask Me Anything session about career paths in technology.</p>
+                        <h3>Web Wizards Workshop: Master the Digital Realm</h3>
+                        <p>Join us for an interactive workshop session session about the internet and learn how to create your own VPN!</p>
                         <div class="event-meta">
                             <span><i class="fas fa-video"></i> Virtual Event (Zoom)</span>
-                            <span><i class="far fa-clock"></i> 2 hours</span>
+                            <span><i class="far fa-clock"></i> 1 hour</span>
                         </div>
-                        <a href="https://tally.so/r/nrk2q2" target="_blank" class="btn btn-primary">Register Now</a>
+                        <a href="https://tally.so/r/mBe8xQ" target="_blank" class="btn btn-primary">Register Now</a>
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
 
         <section class="upcoming-events">
             <div class="container">
@@ -122,7 +122,7 @@
                     <li>Networking Sessions</li>
                     <li>Live Demonstrations</li>
                 </ul>
-                <a href="#" class="btn btn-primary">View Events</a>
+                <!-- <a href="#" class="btn btn-primary">View Events</a> -->
             </div>
 
             <div class="event-block">
@@ -136,7 +136,7 @@
                     <li>Project Building</li>
                     <li>Technical Skills</li>
                 </ul>
-                <a href="#" class="btn btn-primary">Join Workshop</a>
+                <!-- <a href="#" class="btn btn-primary">Join Workshop</a> -->
             </div>
 
             <div class="event-block">
@@ -150,50 +150,13 @@
                     <li>Career Guidance</li>
                     <li>Project Support</li>
                 </ul>
-                <a href="#" class="btn btn-primary">Learn More</a>
+                <!-- <a href="#" class="btn btn-primary">Learn More</a> -->
             </div>
         </div>
     </div>
 </section>
 
-<section class="past-events-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Past Events</h2>
-            <p class="section-description">Explore our previous workshops and events.</p>
-        </div>
-        <div class="events-grid">
-            <!-- Tech Pathways Event moved from upcoming to past -->
-            <div class="event-card past">
-                <div class="event-image">
-                    <img src="https://images.unsplash.com/photo-1573166364524-d9dbfd8bbf83?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Tech Pathways Workshop">
-                    <div class="event-overlay"></div>
-                    <div class="event-date">
-                        <span class="month">May</span>
-                        <span class="day">15</span>
-                    </div>
-                </div>
-                <div class="event-content">
-                    <div class="event-details">
-                        <h3>Tech Pathways Workshop</h3>
-                        <p class="event-meta">
-                            <i class="fas fa-clock"></i> 4:00 PM - 6:00 PM PST
-                        </p>
-                        <p class="event-meta">
-                            <i class="fas fa-map-marker-alt"></i> Online (Zoom)
-                        </p>
-                        <p class="event-description">
-                            Discover various career paths in technology and how to prepare for them.
-                        </p>
-                    </div>
-                    <div class="event-footer">
-                        <a href="./tech-pathways-ama" class="btn-view-event">View Event</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 
 <style>
 .events-grid {
@@ -419,13 +382,13 @@
         const closeBtn = document.getElementsByClassName('close')[0];
         const allButtons = document.querySelectorAll('.btn:not([href^="/"])');
 
-        // Add click handler to buttons (excluding the register button)
-        allButtons.forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                modal.style.display = 'block';
-            });
-        });
+        // // Add click handler to buttons (excluding the register button)
+        // allButtons.forEach(button => {
+        //     button.addEventListener('click', function(e) {
+        //         e.preventDefault();
+        //         modal.style.display = 'block';
+        //     });
+        // });
 
         // Close modal when clicking (x)
         closeBtn.addEventListener('click', function() {
